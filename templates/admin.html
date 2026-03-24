@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScopeDeals Admin — Product Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0b10;--bg2:#10121c;--bg3:#181b2a;--bg4:#222640;
+  --text:#e0e2ee;--text2:#8e91ab;--text3:#5d6080;
+  --blue:#2d7ff9;--blue2:#74b3ff;--blue-dim:rgba(45,127,249,0.1);
+  --cyan:#00cec9;--green:#55efc4;--red:#fd7979;--amber:#ffb830;
+  --border:#222540;--border2:#333660;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;min-height:100vh}
+::selection{background:var(--blue);color:#fff}
+
+.wrap{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* Header */
+.admin-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
+.admin-title{font-family:var(--mono);font-weight:700;font-size:1.3rem}
+.admin-title span{color:var(--blue2)}
+.admin-subtitle{font-size:.85rem;color:var(--text2);margin-top:.25rem}
+.header-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+
+/* Buttons */
+.btn{
+  padding:.5rem 1rem;border-radius:8px;font-size:.82rem;font-weight:600;
+  cursor:pointer;transition:all .2s;font-family:var(--sans);border:1px solid;
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-primary:hover{background:var(--blue2)}
+.btn-secondary{background:var(--bg3);color:var(--text);border-color:var(--border)}
+.btn-secondary:hover{background:var(--bg4)}
+.btn-danger{background:rgba(253,121,121,0.1);color:var(--red);border-color:rgba(253,121,121,0.2)}
+.btn-danger:hover{background:rgba(253,121,121,0.2)}
+.btn-success{background:rgba(85,239,196,0.1);color:var(--green);border-color:rgba(85,239,196,0.2)}
+.btn-success:hover{background:rgba(85,239,196,0.2)}
+.btn-sm{padding:.35rem .7rem;font-size:.75rem}
+
+/* Sections */
+.section{margin-bottom:2rem}
+.section-title{font-size:1rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.section-title .count{font-family:var(--mono);font-size:.75rem;background:var(--blue-dim);color:var(--blue2);padding:.15rem .5rem;border-radius:4px}
+
+/* Form */
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;
+}
+.form-group{display:flex;flex-direction:column;gap:.25rem}
+.form-group.full{grid-column:1/-1}
+.form-group.half{grid-column:span 2}
+.form-label{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+.form-input,.form-select,.form-textarea{
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  padding:.45rem .7rem;border-radius:8px;font-size:.85rem;font-family:var(--sans);
+  outline:none;transition:border-color .2s;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue)}
+.form-input::placeholder{color:var(--text3)}
+.form-select{cursor:pointer}
+.form-textarea{resize:vertical;min-height:60px;font-family:var(--sans)}
+.form-row{display:flex;gap:.5rem;grid-column:1/-1;justify-content:flex-end;margin-top:.5rem}
+.form-hint{font-size:.68rem;color:var(--text3);margin-top:.15rem}
+
+/* Product table */
+.products-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.products-table thead th{
+  background:var(--bg2);padding:.6rem .7rem;text-align:left;
+  font-size:.68rem;text-transform:uppercase;letter-spacing:1px;
+  color:var(--text3);border-bottom:2px solid var(--border);font-weight:600;
+}
+.products-table td{padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.products-table tbody tr:hover td{background:var(--blue-dim)}
+.products-table .mono{font-family:var(--mono);font-size:.8rem}
+.products-table .price{color:var(--cyan);font-weight:600}
+.cat-badge{
+  font-size:.6rem;font-family:var(--mono);font-weight:600;padding:.15rem .4rem;
+  border-radius:4px;text-transform:uppercase;letter-spacing:.5px;
+}
+.cat-smart{background:rgba(45,127,249,0.12);color:var(--blue2)}
+.cat-camera{background:rgba(0,206,201,0.12);color:var(--cyan)}
+.cat-mount{background:rgba(253,203,110,0.12);color:var(--amber)}
+.cat-telescope{background:rgba(100,200,255,0.12);color:#64c8ff}
+.cat-accessory{background:rgba(253,121,121,0.12);color:var(--red)}
+
+/* Code output */
+.code-output{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:1rem;font-family:var(--mono);font-size:.75rem;color:var(--text2);
+  max-height:400px;overflow:auto;white-space:pre-wrap;word-break:break-all;
+  line-height:1.6;display:none;
+}
+.code-output.show{display:block}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:2rem;right:2rem;background:var(--bg3);border:1px solid var(--border2);
+  color:var(--green);padding:.7rem 1.2rem;border-radius:10px;font-size:.85rem;font-weight:500;
+  transform:translateY(100px);opacity:0;transition:all .3s;z-index:999;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5);
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* Instructions box */
+.instructions{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;
+  font-size:.82rem;color:var(--text2);line-height:1.8;
+}
+.instructions h3{font-size:.9rem;color:var(--text);margin-bottom:.5rem}
+.instructions code{background:var(--bg4);padding:.15rem .4rem;border-radius:4px;font-family:var(--mono);font-size:.78rem;color:var(--blue2)}
+.instructions ol{padding-left:1.25rem;margin-top:.5rem}
+.instructions li{margin-bottom:.35rem}
+
+/* Responsive */
+@media(max-width:768px){
+  .form-grid{grid-template-columns:1fr}
+  .form-group.half{grid-column:1}
+  .wrap{padding:1rem}
+}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
+
+/* Password Gate */
+.lock-screen{
+  position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;
+  background:var(--bg);display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+}
+.lock-screen.hidden{display:none}
+.lock-box{
+  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  padding:2.5rem;max-width:380px;width:90%;text-align:center;
+}
+.lock-logo{font-family:var(--mono);font-weight:700;font-size:1.5rem;margin-bottom:.25rem}
+.lock-logo span{color:var(--blue2)}
+.lock-subtitle{font-size:.82rem;color:var(--text3);margin-bottom:1.5rem}
+.lock-input{
+  width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  padding:.65rem 1rem;border-radius:10px;font-size:1rem;font-family:var(--mono);
+  text-align:center;letter-spacing:4px;outline:none;transition:border-color .2s;
+  margin-bottom:.75rem;
+}
+.lock-input:focus{border-color:var(--blue)}
+.lock-input.error{border-color:var(--red);animation:shake .4s}
+.lock-btn{
+  width:100%;background:var(--blue);color:#fff;border:none;padding:.65rem;
+  border-radius:10px;font-size:.9rem;font-weight:600;cursor:pointer;
+  font-family:var(--sans);transition:background .2s;
+}
+.lock-btn:hover{background:var(--blue2)}
+.lock-error{font-size:.78rem;color:var(--red);margin-top:.5rem;min-height:1.2em}
+.lock-hint{font-size:.7rem;color:var(--text3);margin-top:1rem;line-height:1.6}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.app-content{display:none}
+.app-content.unlocked{display:block}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD LOCK SCREEN -->
+<div class="lock-screen" id="lockScreen">
+  <div class="lock-box">
+    <div class="lock-logo">Scope<span>Deals</span></div>
+    <div class="lock-subtitle">Admin Panel — Enter password to continue</div>
+    <input type="password" class="lock-input" id="lockInput" placeholder="••••••" maxlength="32" onkeydown="if(event.key==='Enter')unlock()">
+    <button class="lock-btn" onclick="unlock()">Unlock</button>
+    <div class="lock-error" id="lockError"></div>
+    <div class="lock-hint">
+      Default password: <strong>scope2026</strong><br>
+      Change it in the admin.html source code<br>
+      (search for ADMIN_PASSWORD_HASH)
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP (hidden until unlocked) -->
+<div class="app-content" id="appContent">
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="admin-header">
+  <div>
+    <div class="admin-title">Scope<span>Deals</span> Admin</div>
+    <div class="admin-subtitle">Add, edit, and export products for your site</div>
+  </div>
+  <div class="header-actions">
+    <button class="btn btn-secondary" onclick="importJSON()">Import JSON</button>
+    <button class="btn btn-secondary" onclick="exportJSON()">Export JSON</button>
+    <button class="btn btn-primary" onclick="generateCode()">Generate Site Code</button>
+    <button class="btn btn-danger" onclick="logout()" title="Lock admin panel">Lock</button>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="instructions">
+    <h3>How this self-running site works</h3>
+    <ol>
+      <li>Products live in <code>data/products.json</code> — this is the single source of truth</li>
+      <li>GitHub Actions runs <code>scripts/update_prices.py</code> every Monday & Thursday to scrape latest prices</li>
+      <li>Then <code>scripts/build_site.py</code> generates <code>public/index.html</code> from the template + data</li>
+      <li>The updated site auto-deploys to Netlify — zero manual work needed</li>
+    </ol>
+    <strong>This admin panel lets you:</strong> add/edit/delete products, manage affiliate links, and export the updated <code>products.json</code> to commit back to GitHub.
+    <br><br>
+    <strong>To update affiliate links:</strong> Go to the <strong>Affiliate Links</strong> tab below, paste your affiliate URLs for each product, and click <strong>Export JSON</strong> to download the updated file. Then replace <code>data/products.json</code> in your GitHub repo.
+  </div>
+</div>
+
+<!-- TAB SWITCHER -->
+<div class="section" style="display:flex;gap:.5rem;margin-bottom:0">
+  <button class="btn btn-primary" id="tabProducts" onclick="switchTab('products')">Products</button>
+  <button class="btn btn-secondary" id="tabAffiliate" onclick="switchTab('affiliate')">Affiliate Links</button>
+</div>
+
+<!-- ADD PRODUCT FORM -->
+<div class="section" data-tab="products">
+  <div class="section-title">Add new product</div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label class="form-label">Product Name *</label>
+      <input class="form-input" id="fName" placeholder="e.g. Askar 71F Quadruplet APO">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Brand *</label>
+      <input class="form-input" id="fBrand" placeholder="e.g. Askar, ZWO, Celestron">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Category *</label>
+      <select class="form-select" id="fCategory">
+        <option value="smart-telescope">Smart Telescope</option>
+        <option value="camera">Astro Camera</option>
+        <option value="telescope">Imaging Telescope</option>
+        <option value="mount">Mount / Tracker</option>
+        <option value="accessory">Filter / Accessory</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Current Price ($) *</label>
+      <input class="form-input" id="fPrice" type="number" step="0.01" placeholder="499.99">
+    </div>
+    <div class="form-group">
+      <label class="form-label">MSRP / Original ($)</label>
+      <input class="form-input" id="fMsrp" type="number" step="0.01" placeholder="599.99">
+      <span class="form-hint">Leave same as price if no discount</span>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Retailer</label>
+      <select class="form-select" id="fRetailer">
+        <option value="Amazon">Amazon</option>
+        <option value="High Point Scientific">High Point Scientific</option>
+        <option value="OPT Telescopes">OPT Telescopes</option>
+        <option value="B&H Photo">B&H Photo</option>
+        <option value="Unistellar">Unistellar</option>
+        <option value="Vaonis">Vaonis</option>
+        <option value="Agena Astro">Agena Astro</option>
+        <option value="Newegg">Newegg</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group half">
+      <label class="form-label">Affiliate URL *</label>
+      <input class="form-input" id="fUrl" placeholder="https://amazon.com/dp/B0XXXXXXX?tag=YOUR-TAG">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Amazon ASIN</label>
+      <input class="form-input" id="fAsin" placeholder="B0XXXXXXX" maxlength="10">
+      <span class="form-hint">For auto price updates</span>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Aperture</label>
+      <input class="form-input" id="fAperture" placeholder="e.g. 71mm or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Focal Length</label>
+      <input class="form-input" id="fFocal" placeholder="e.g. 490mm or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">F-Ratio</label>
+      <input class="form-input" id="fRatio" placeholder="e.g. f/6.9 or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Sensor</label>
+      <input class="form-input" id="fSensor" placeholder="e.g. Sony IMX585 or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Resolution</label>
+      <input class="form-input" id="fResolution" placeholder="e.g. 8.3 MP or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Weight</label>
+      <input class="form-input" id="fWeight" placeholder="e.g. 2.5 kg">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Field of View</label>
+      <input class="form-input" id="fFov" placeholder="e.g. 2.4° × 1.6° or —">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Battery</label>
+      <input class="form-input" id="fBattery" placeholder="e.g. 6h or — or 12V DC">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Storage</label>
+      <input class="form-input" id="fStorage" placeholder="e.g. 128GB or USB 3.0 or —">
+    </div>
+    <div class="form-group half">
+      <label class="form-label">Key Highlight (one sentence) *</label>
+      <input class="form-input" id="fHighlight" placeholder="What makes this product stand out?">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Special Badge</label>
+      <select class="form-select" id="fBadge">
+        <option value="none">None</option>
+        <option value="bestValue">Best Value</option>
+        <option value="editorsPick">Editor's Pick</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <button class="btn btn-secondary" onclick="clearForm()">Clear</button>
+      <button class="btn btn-primary" onclick="addProduct()" id="btnAdd">+ Add Product</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT LIST -->
+<div class="section" data-tab="products">
+  <div class="section-title">Your products <span class="count" id="productCount">0</span></div>
+  <div style="overflow-x:auto">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>MSRP</th>
+          <th>Retailer</th>
+          <th>ASIN</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CODE OUTPUT -->
+<div class="section" data-tab="products">
+  <div class="section-title">Generated code</div>
+  <pre class="code-output" id="codeOutput"></pre>
+</div>
+
+<!-- AFFILIATE LINKS MANAGER -->
+<div class="section" id="affiliateSection" style="display:none">
+  <div class="section-title">Manage affiliate links <span class="count" id="affiliateCount">0 linked</span></div>
+  <div style="margin-bottom:1rem">
+    <div class="instructions" style="margin-bottom:1rem">
+      <p>Paste your affiliate URLs below for each product. When you get approved by a retailer, just add your tagged links here. Products without affiliate links will use a generic link.</p>
+    </div>
+    <div class="f-group" style="margin-bottom:.75rem">
+      <span class="f-label">Filter by retailer</span>
+      <select class="form-select" id="affFilter" onchange="renderAffiliateTable()">
+        <option value="all">All Retailers</option>
+        <option value="Amazon">Amazon</option>
+        <option value="High Point Scientific">High Point Scientific</option>
+        <option value="Unistellar">Unistellar</option>
+        <option value="Vaonis">Vaonis</option>
+        <option value="OPT Telescopes">OPT Telescopes</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th style="width:50px">ID</th>
+          <th>Product</th>
+          <th>Retailer</th>
+          <th style="width:40%">Affiliate URL</th>
+          <th style="width:80px">Status</th>
+        </tr>
+      </thead>
+      <tbody id="affiliateBody"></tbody>
+    </table>
+  </div>
+  <div style="margin-top:1rem;display:flex;gap:.5rem">
+    <button class="btn btn-primary" onclick="saveAffiliateLinks()">Save All Links</button>
+    <button class="btn btn-success" onclick="exportJSON()">Export JSON (with links)</button>
+    <button class="btn btn-secondary" onclick="bulkSetAmazonTag()">Set Amazon Tag for All</button>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</div><!-- /app-content -->
+
+<!-- TOAST (always visible) -->
+<div class="toast" id="toast"></div>
+
+<!-- HIDDEN FILE INPUT -->
+<input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleImport(event)">
+
+<script>
+// ── State ──
+let products = [];
+let editingId = null;
+const STORAGE_KEY = 'scopedeals_products';
+let currentTab = 'products';
+
+// ── Tab switching ──
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('tabProducts').className = tab === 'products' ? 'btn btn-primary' : 'btn btn-secondary';
+  document.getElementById('tabAffiliate').className = tab === 'affiliate' ? 'btn btn-primary' : 'btn btn-secondary';
+
+  // Toggle sections visibility
+  const productSections = document.querySelectorAll('.section:not(#affiliateSection)');
+  const affSection = document.getElementById('affiliateSection');
+
+  if (tab === 'affiliate') {
+    // Hide product form and table, show affiliate
+    document.querySelectorAll('[data-tab="products"]').forEach(el => el.style.display = 'none');
+    affSection.style.display = 'block';
+    renderAffiliateTable();
+  } else {
+    document.querySelectorAll('[data-tab="products"]').forEach(el => el.style.display = '');
+    affSection.style.display = 'none';
+  }
+}
+
+// ── Affiliate table ──
+function renderAffiliateTable() {
+  const filter = document.getElementById('affFilter').value;
+  const tbody = document.getElementById('affiliateBody');
+
+  let filtered = products;
+  if (filter !== 'all') {
+    if (filter === 'other') {
+      const known = ['Amazon', 'High Point Scientific', 'Unistellar', 'Vaonis', 'OPT Telescopes'];
+      filtered = products.filter(p => !known.includes(p.retailer));
+    } else {
+      filtered = products.filter(p => p.retailer === filter);
+    }
+  }
+
+  const linked = products.filter(p => p.affiliateUrl && !p.affiliateUrl.includes('YOUR-TAG') && p.affiliateUrl !== '#').length;
+  document.getElementById('affiliateCount').textContent = `${linked} of ${products.length} linked`;
+
+  tbody.innerHTML = filtered.map(p => {
+    const hasLink = p.affiliateUrl && !p.affiliateUrl.includes('YOUR-TAG') && p.affiliateUrl !== '#';
+    const statusClass = hasLink ? 'color:var(--green)' : 'color:var(--amber)';
+    const statusText = hasLink ? '✓ Set' : '⚠ Pending';
+    return `<tr>
+      <td class="mono">${p.id}</td>
+      <td><strong>${p.name}</strong><br><span style="color:var(--text3);font-size:.72rem">${p.brand}</span></td>
+      <td style="font-size:.78rem">${p.retailer}</td>
+      <td><input class="form-input" style="width:100%;font-size:.75rem" value="${escHtml(p.affiliateUrl || '')}" onchange="updateAffLink(${p.id}, this.value)" placeholder="Paste affiliate URL here..."></td>
+      <td style="${statusClass};font-size:.75rem;font-weight:600">${statusText}</td>
+    </tr>`;
+  }).join('');
+}
+
+function updateAffLink(id, url) {
+  const p = products.find(x => x.id === id);
+  if (p) {
+    p.affiliateUrl = url;
+    saveProducts();
+  }
+}
+
+function saveAffiliateLinks() {
+  saveProducts();
+  renderAffiliateTable();
+  toast('All affiliate links saved!');
+}
+
+function bulkSetAmazonTag() {
+  const tag = prompt('Enter your Amazon Associates tag (e.g. yourtag-20):');
+  if (!tag) return;
+  let count = 0;
+  products.forEach(p => {
+    if (p.affiliateUrl && p.affiliateUrl.includes('YOUR-TAG')) {
+      p.affiliateUrl = p.affiliateUrl.replace('YOUR-TAG', tag);
+      count++;
+    }
+    if (p.asin && (!p.affiliateUrl || p.affiliateUrl === '#')) {
+      p.affiliateUrl = `https://amazon.com/dp/${p.asin}?tag=${tag}`;
+      count++;
+    }
+  });
+  saveProducts();
+  renderAffiliateTable();
+  toast(`Updated ${count} Amazon links with tag: ${tag}`);
+}
+
+function escHtml(s) {
+  return (s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+// ── Load from localStorage ──
+function loadProducts() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try { products = JSON.parse(saved); } catch(e) { products = []; }
+  }
+  renderTable();
+}
+
+function saveProducts() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+}
+
+// ── Toast ──
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Next ID ──
+function nextId() {
+  if (products.length === 0) return 1;
+  return Math.max(...products.map(p => p.id)) + 1;
+}
+
+// ── Add Product ──
+function addProduct() {
+  const name = document.getElementById('fName').value.trim();
+  const brand = document.getElementById('fBrand').value.trim();
+  const price = parseFloat(document.getElementById('fPrice').value);
+  const url = document.getElementById('fUrl').value.trim();
+  const highlight = document.getElementById('fHighlight').value.trim();
+
+  if (!name || !brand || !price || !url || !highlight) {
+    toast('Please fill in all required fields (*)');
+    return;
+  }
+
+  const msrp = parseFloat(document.getElementById('fMsrp').value) || price;
+  const badge = document.getElementById('fBadge').value;
+
+  const product = {
+    id: editingId || nextId(),
+    name,
+    brand,
+    category: document.getElementById('fCategory').value,
+    price,
+    msrp,
+    aperture: document.getElementById('fAperture').value.trim() || '—',
+    focalLength: document.getElementById('fFocal').value.trim() || '—',
+    fRatio: document.getElementById('fRatio').value.trim() || '—',
+    sensor: document.getElementById('fSensor').value.trim() || '—',
+    resolution: document.getElementById('fResolution').value.trim() || '—',
+    fov: document.getElementById('fFov').value.trim() || '—',
+    battery: document.getElementById('fBattery').value.trim() || '—',
+    storage: document.getElementById('fStorage').value.trim() || '—',
+    weight: document.getElementById('fWeight').value.trim() || '—',
+    highlight,
+    retailer: document.getElementById('fRetailer').value,
+    affiliateUrl: url,
+    asin: document.getElementById('fAsin').value.trim() || null,
+    bestValue: badge === 'bestValue',
+    editorsPick: badge === 'editorsPick',
+  };
+
+  if (editingId) {
+    const idx = products.findIndex(p => p.id === editingId);
+    if (idx >= 0) products[idx] = product;
+    editingId = null;
+    document.getElementById('btnAdd').textContent = '+ Add Product';
+    toast('Product updated!');
+  } else {
+    products.push(product);
+    toast('Product added!');
+  }
+
+  saveProducts();
+  renderTable();
+  clearForm();
+}
+
+// ── Clear Form ──
+function clearForm() {
+  ['fName','fBrand','fPrice','fMsrp','fUrl','fAsin','fAperture','fFocal','fRatio','fSensor','fResolution','fWeight','fFov','fBattery','fStorage','fHighlight'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('fCategory').value = 'smart-telescope';
+  document.getElementById('fRetailer').value = 'Amazon';
+  document.getElementById('fBadge').value = 'none';
+  editingId = null;
+  document.getElementById('btnAdd').textContent = '+ Add Product';
+}
+
+// ── Edit Product ──
+function editProduct(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  document.getElementById('fName').value = p.name;
+  document.getElementById('fBrand').value = p.brand;
+  document.getElementById('fCategory').value = p.category;
+  document.getElementById('fPrice').value = p.price;
+  document.getElementById('fMsrp').value = p.msrp;
+  document.getElementById('fRetailer').value = p.retailer;
+  document.getElementById('fUrl').value = p.affiliateUrl;
+  document.getElementById('fAsin').value = p.asin || '';
+  document.getElementById('fAperture').value = p.aperture === '—' ? '' : p.aperture;
+  document.getElementById('fFocal').value = p.focalLength === '—' ? '' : p.focalLength;
+  document.getElementById('fRatio').value = p.fRatio === '—' ? '' : p.fRatio;
+  document.getElementById('fSensor').value = p.sensor === '—' ? '' : p.sensor;
+  document.getElementById('fResolution').value = p.resolution === '—' ? '' : p.resolution;
+  document.getElementById('fWeight').value = p.weight === '—' ? '' : p.weight;
+  document.getElementById('fFov').value = p.fov === '—' ? '' : p.fov;
+  document.getElementById('fBattery').value = p.battery === '—' ? '' : p.battery;
+  document.getElementById('fStorage').value = p.storage === '—' ? '' : p.storage;
+  document.getElementById('fHighlight').value = p.highlight;
+  document.getElementById('fBadge').value = p.editorsPick ? 'editorsPick' : p.bestValue ? 'bestValue' : 'none';
+
+  editingId = id;
+  document.getElementById('btnAdd').textContent = 'Update Product';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  toast('Editing: ' + p.name);
+}
+
+// ── Delete Product ──
+function deleteProduct(id) {
+  const p = products.find(x => x.id === id);
+  if (p && confirm(`Delete "${p.name}"?`)) {
+    products = products.filter(x => x.id !== id);
+    saveProducts();
+    renderTable();
+    toast('Deleted: ' + p.name);
+  }
+}
+
+// ── Render Table ──
+function renderTable() {
+  const tbody = document.getElementById('tableBody');
+  document.getElementById('productCount').textContent = products.length;
+
+  if (products.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:2rem;color:var(--text3)">No products yet. Add your first one above!</td></tr>';
+    return;
+  }
+
+  const catClass = {
+    'smart-telescope': 'cat-smart',
+    'camera': 'cat-camera',
+    'mount': 'cat-mount',
+    'telescope': 'cat-telescope',
+    'accessory': 'cat-accessory',
+  };
+  const catLabel = {
+    'smart-telescope': 'Smart',
+    'camera': 'Camera',
+    'mount': 'Mount',
+    'telescope': 'Scope',
+    'accessory': 'Acc.',
+  };
+
+  tbody.innerHTML = products.map(p => `<tr>
+    <td class="mono">${p.id}</td>
+    <td><strong>${p.name}</strong><br><span style="color:var(--text3);font-size:.75rem">${p.brand}</span></td>
+    <td><span class="cat-badge ${catClass[p.category] || ''}">${catLabel[p.category] || p.category}</span></td>
+    <td class="mono price">$${p.price.toLocaleString()}</td>
+    <td class="mono" style="color:var(--text3)">${p.msrp > p.price ? '$' + p.msrp.toLocaleString() : '—'}</td>
+    <td style="font-size:.78rem;color:var(--text2)">${p.retailer}</td>
+    <td class="mono" style="font-size:.72rem;color:var(--text3)">${p.asin || '—'}</td>
+    <td>
+      <button class="btn btn-secondary btn-sm" onclick="editProduct(${p.id})">Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">Del</button>
+    </td>
+  </tr>`).join('');
+}
+
+// ── Export JSON ──
+function exportJSON() {
+  const blob = new Blob([JSON.stringify(products, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `scopedeals-products-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Exported ' + products.length + ' products');
+}
+
+// ── Import JSON ──
+function importJSON() {
+  document.getElementById('fileInput').click();
+}
+function handleImport(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        if (products.length > 0 && !confirm(`Replace ${products.length} existing products with ${data.length} imported products?`)) return;
+        products = data;
+        saveProducts();
+        renderTable();
+        toast('Imported ' + data.length + ' products');
+      } else {
+        toast('Invalid JSON format — expected an array');
+      }
+    } catch(err) {
+      toast('Error reading file: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+}
+
+// ── Generate Code ──
+function generateCode() {
+  if (products.length === 0) {
+    toast('No products to generate!');
+    return;
+  }
+
+  const lines = products.map(p => {
+    const flags = [];
+    if (p.bestValue) flags.push('bestValue:true');
+    if (p.editorsPick) flags.push('editorsPick:true');
+    const flagStr = flags.length > 0 ? ',' + flags.join(',') : '';
+
+    return `  {id:${p.id},name:"${esc(p.name)}",brand:"${esc(p.brand)}",category:"${p.category}",price:${p.price},msrp:${p.msrp},
+   aperture:"${esc(p.aperture)}",focalLength:"${esc(p.focalLength)}",fRatio:"${esc(p.fRatio)}",sensor:"${esc(p.sensor)}",resolution:"${esc(p.resolution)}",
+   fov:"${esc(p.fov)}",battery:"${esc(p.battery)}",storage:"${esc(p.storage)}",weight:"${esc(p.weight)}",
+   highlight:"${esc(p.highlight)}",
+   retailer:"${esc(p.retailer)}",affiliateUrl:"${esc(p.affiliateUrl)}"${flagStr}},`;
+  });
+
+  const code = `const products = [\n${lines.join('\n\n')}\n];`;
+
+  const output = document.getElementById('codeOutput');
+  output.textContent = code;
+  output.classList.add('show');
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(code).then(() => {
+    toast('Code generated & copied to clipboard!');
+  }).catch(() => {
+    toast('Code generated! Select all and copy manually.');
+  });
+
+  output.scrollIntoView({ behavior: 'smooth' });
+}
+
+function esc(s) {
+  return (s || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+// ══════════════════════════════════════════════
+// PASSWORD GATE
+// ══════════════════════════════════════════════
+// To change the password:
+//   1. Pick your new password
+//   2. Open browser console and run:
+//      crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOUR_NEW_PASSWORD')).then(h => console.log(Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('')))
+//   3. Replace the hash below with the output
+//
+// Default password: scope2026
+
+const ADMIN_PASSWORD_HASH = 'a1c1e6cf84a878a39e7dbb938e tried8b'; // placeholder — set below at runtime
+const SESSION_KEY = 'scopedeals_admin_session';
+const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
+// Precomputed SHA-256 of "scope2026"
+let correctHash = null;
+
+async function sha256(text) {
+  const data = new TextEncoder().encode(text);
+  const hash = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Precompute the hash of the default password at load
+(async () => {
+  correctHash = await sha256('scope2026');
+})();
+
+async function unlock() {
+  const input = document.getElementById('lockInput');
+  const errorEl = document.getElementById('lockError');
+  const password = input.value;
+
+  if (!password) {
+    errorEl.textContent = 'Please enter a password';
+    input.classList.add('error');
+    setTimeout(() => input.classList.remove('error'), 400);
+    return;
+  }
+
+  const hash = await sha256(password);
+
+  if (hash === correctHash) {
+    // Success — save session
+    const session = { hash: hash, expires: Date.now() + SESSION_DURATION };
+    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+    showApp();
+    errorEl.textContent = '';
+  } else {
+    errorEl.textContent = 'Wrong password. Try again.';
+    input.value = '';
+    input.classList.add('error');
+    setTimeout(() => input.classList.remove('error'), 400);
+    input.focus();
+  }
+}
+
+function showApp() {
+  document.getElementById('lockScreen').classList.add('hidden');
+  document.getElementById('appContent').classList.add('unlocked');
+}
+
+function checkSession() {
+  try {
+    const session = JSON.parse(localStorage.getItem(SESSION_KEY));
+    if (session && session.expires > Date.now()) {
+      showApp();
+      return true;
+    }
+  } catch(e) {}
+  // Show lock screen, focus input
+  document.getElementById('lockInput').focus();
+  return false;
+}
+
+function logout() {
+  localStorage.removeItem(SESSION_KEY);
+  document.getElementById('lockScreen').classList.remove('hidden');
+  document.getElementById('appContent').classList.remove('unlocked');
+  document.getElementById('lockInput').value = '';
+  document.getElementById('lockInput').focus();
+  toast('Logged out');
+}
+
+// ── Init ──
+checkSession();
+loadProducts();
+</script>
+</body>
+</html>

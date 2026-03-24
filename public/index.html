@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Compare smart telescope prices, specs, and deals. Find the best smart telescopes from Unistellar, ZWO Seestar, Celestron Origin, Vaonis, and DwarfLab. Updated daily.">
+<meta name="keywords" content="smart telescope comparison, best smart telescope 2026, Seestar S30, Celestron Origin, Unistellar Odyssey, Vaonis Vespera, DwarfLab DWARF 3, astrophotography telescope deals">
+<title>ScopeDeals — Smart Telescope & Astrophotography Price Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#06070d;--bg2:#0c0e18;--bg3:#141726;--bg4:#1c2035;
+  --text:#dfe1ed;--text2:#8e91ab;--text3:#5d6080;
+  --accent:#2d7ff9;--accent2:#74b3ff;--accent-glow:rgba(45,127,249,0.12);
+  --cyan:#00cec9;--cyan-dim:rgba(0,206,201,0.1);
+  --orange:#fdcb6e;--red:#fd7979;--green:#55efc4;
+  --border:#1e2140;--border2:#2d3160;
+  --radius:10px;--radius-lg:16px;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--sans);
+  line-height:1.6;min-height:100vh;
+}
+::selection{background:var(--accent);color:#fff}
+
+/* ── STARFIELD BG ── */
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1.5px 1.5px at 15% 90%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 40% 35%, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1px 1px at 25% 50%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(45,127,249,0.06) 0%, transparent 70%);
+}
+.page{position:relative;z-index:1}
+
+/* ── HEADER ── */
+.header{
+  padding:2.5rem 2rem 1.5rem;max-width:1280px;margin:0 auto;
+  border-bottom:1px solid var(--border);
+}
+.header-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.logo{display:flex;align-items:center;gap:.7rem}
+.logo-ring{
+  width:40px;height:40px;border-radius:50%;
+  border:2.5px solid var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.logo-ring::after{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:var(--cyan);position:absolute;
+  animation:orbit 4s linear infinite;
+}
+@keyframes orbit{
+  0%{transform:rotate(0deg) translateX(14px)}
+  100%{transform:rotate(360deg) translateX(14px)}
+}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent2)}
+.logo-text{font-family:var(--mono);font-weight:700;font-size:1.3rem;letter-spacing:-0.5px}
+.logo-text span{color:var(--accent2)}
+.header-badges{display:flex;gap:.75rem;flex-wrap:wrap}
+.badge{
+  display:flex;align-items:center;gap:.4rem;
+  background:var(--bg3);border:1px solid var(--border);
+  padding:.35rem .75rem;border-radius:20px;font-size:.72rem;
+  color:var(--text2);font-family:var(--mono);
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.badge-dot.live{background:var(--green);box-shadow:0 0 6px var(--green)}
+.badge-dot.count{background:var(--accent2)}
+.tagline{
+  margin-top:1rem;font-size:.95rem;color:var(--text2);
+  max-width:680px;line-height:1.7;
+}
+.tagline strong{color:var(--cyan);font-weight:500}
+
+/* ── NAV TABS ── */
+.nav-tabs{
+  max-width:1280px;margin:0 auto;padding:.75rem 2rem;
+  display:flex;gap:.5rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:120;
+  background:rgba(6,7,13,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.tab{
+  padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:500;
+  cursor:pointer;transition:all .2s;border:1px solid transparent;
+  color:var(--text2);background:transparent;font-family:var(--sans);
+}
+.tab:hover{color:var(--text);background:var(--bg3)}
+.tab.active{background:var(--accent-glow);color:var(--accent2);border-color:rgba(45,127,249,0.3)}
+.tab .tab-count{
+  font-family:var(--mono);font-size:.68rem;
+  background:var(--bg4);padding:0 .4rem;border-radius:4px;margin-left:.35rem;
+}
+.tab.active .tab-count{background:rgba(45,127,249,0.2)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:.6rem}
+
+/* ── FILTERS ── */
+.filters-row{
+  max-width:1280px;margin:0 auto;padding:.75rem 2rem;
+  display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;
+  border-bottom:1px solid var(--border);
+}
+.f-select,.f-input{
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  padding:.4rem .7rem;border-radius:var(--radius);font-size:.82rem;
+  font-family:var(--sans);outline:none;transition:border-color .2s;
+}
+.f-select:focus,.f-input:focus{border-color:var(--accent)}
+.f-select{
+  cursor:pointer;padding-right:1.8rem;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 4l3 3 3-3' fill='none' stroke='%235d6080' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .5rem center;
+}
+.f-input{width:90px;font-family:var(--mono)}
+.f-input::placeholder{color:var(--text3)}
+.f-label{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin-right:.2rem}
+.f-group{display:flex;align-items:center;gap:.3rem}
+.f-btn{
+  background:var(--accent-glow);border:1px solid rgba(45,127,249,0.25);
+  color:var(--accent2);padding:.4rem .8rem;border-radius:var(--radius);
+  font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--sans);
+}
+.f-btn:hover{background:rgba(45,127,249,0.2)}
+.f-btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.f-spacer{flex:1}
+.results-info{font-family:var(--mono);font-size:.75rem;color:var(--text3)}
+
+/* ── PRODUCT GRID ── */
+.grid-wrap{max-width:1280px;margin:0 auto;padding:1rem 2rem 3rem}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1rem}
+
+/* ── PRODUCT CARD ── */
+.card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:1.25rem;transition:all .3s;position:relative;overflow:hidden;
+}
+.card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.card.best-value{border-color:rgba(0,206,201,0.35)}
+.card.best-value::before{
+  content:'BEST VALUE';position:absolute;top:12px;right:-28px;
+  background:var(--cyan);color:var(--bg);font-size:.58rem;font-weight:700;
+  padding:.2rem 2rem;transform:rotate(45deg);letter-spacing:1px;
+  font-family:var(--mono);
+}
+.card.editors-pick{border-color:rgba(45,127,249,0.35)}
+.card.editors-pick::before{
+  content:"EDITOR'S PICK";position:absolute;top:12px;right:-32px;
+  background:var(--accent);color:#fff;font-size:.58rem;font-weight:700;
+  padding:.2rem 2rem;transform:rotate(45deg);letter-spacing:1px;
+  font-family:var(--mono);
+}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+.card-brand{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.card-name{font-size:1.05rem;font-weight:600;margin-top:.2rem;line-height:1.3}
+.card-type-badge{
+  font-size:.6rem;font-family:var(--mono);font-weight:600;
+  padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;
+  white-space:nowrap;height:fit-content;
+}
+.type-smart{background:rgba(45,127,249,0.15);color:var(--accent2)}
+.type-camera{background:rgba(0,206,201,0.12);color:var(--cyan)}
+.type-mount{background:rgba(253,203,110,0.12);color:var(--orange)}
+.type-accessory{background:rgba(253,121,121,0.12);color:var(--red)}
+.type-eyepiece{background:rgba(85,239,196,0.12);color:var(--green)}
+.type-telescope{background:rgba(100,200,255,0.12);color:#64c8ff}
+
+.card-specs{
+  display:grid;grid-template-columns:1fr 1fr;gap:.4rem .75rem;
+  margin:.75rem 0;padding:.75rem 0;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.spec-item{display:flex;flex-direction:column}
+.spec-label{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.8px}
+.spec-value{font-family:var(--mono);font-size:.8rem;color:var(--text);font-weight:500}
+
+.card-footer{display:flex;align-items:flex-end;justify-content:space-between;margin-top:.75rem}
+.price-block{}
+.price-now{font-family:var(--mono);font-weight:700;font-size:1.35rem;color:var(--cyan)}
+.price-was{font-family:var(--mono);font-size:.78rem;color:var(--text3);text-decoration:line-through;margin-left:.4rem}
+.price-save{
+  display:inline-block;margin-top:.2rem;
+  font-size:.68rem;font-weight:700;padding:.15rem .45rem;border-radius:4px;
+}
+.save-hot{background:rgba(253,121,121,0.12);color:var(--red)}
+.save-good{background:rgba(0,206,201,0.1);color:var(--cyan)}
+.save-ok{background:rgba(253,203,110,0.1);color:var(--orange)}
+.retailer-tag{font-size:.7rem;color:var(--text3);margin-top:.25rem}
+.buy-btn{
+  display:inline-flex;align-items:center;gap:.35rem;
+  background:var(--accent);color:#fff;
+  padding:.55rem 1.1rem;border-radius:8px;font-weight:600;font-size:.82rem;
+  text-decoration:none;transition:all .25s;border:none;cursor:pointer;
+  font-family:var(--sans);white-space:nowrap;
+}
+.buy-btn:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(45,127,249,0.35)}
+.buy-btn svg{width:12px;height:12px}
+
+/* ── TABLE VIEW (toggle) ── */
+.table-view{display:none}
+.table-view.show{display:block}
+.grid-wrap.table-mode .product-grid{display:none}
+.grid-wrap.table-mode .table-view{display:block}
+
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+thead th{
+  background:var(--bg2);padding:.65rem .75rem;text-align:left;
+  font-weight:600;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;
+  color:var(--text3);border-bottom:2px solid var(--border);
+  cursor:pointer;user-select:none;white-space:nowrap;transition:color .2s;
+  position:sticky;top:44px;z-index:50;
+}
+thead th:hover{color:var(--accent2)}
+thead th.sorted{color:var(--accent2)}
+thead th .sa{font-size:.6rem;margin-left:.3rem;opacity:.4}
+thead th.sorted .sa{opacity:1}
+td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:hover td{background:var(--accent-glow)}
+.tbl-product{display:flex;align-items:center;gap:.6rem;min-width:220px}
+.tbl-badge{
+  width:36px;height:36px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);
+  font-weight:700;font-size:.55rem;flex-shrink:0;
+}
+.tbl-name{font-weight:600;font-size:.84rem}
+.tbl-brand{font-size:.7rem;color:var(--text3)}
+.tbl-price{font-family:var(--mono);font-weight:700;color:var(--cyan)}
+.tbl-spec{font-family:var(--mono);font-size:.78rem;color:var(--text2)}
+.tbl-save{font-size:.68rem;font-weight:700}
+.tbl-btn{
+  display:inline-flex;align-items:center;gap:.3rem;
+  background:var(--accent);color:#fff;padding:.35rem .7rem;border-radius:6px;
+  font-weight:600;font-size:.72rem;text-decoration:none;transition:all .2s;
+  white-space:nowrap;
+}
+.tbl-btn:hover{background:var(--accent2)}
+
+/* ── VIEW TOGGLE ── */
+.view-toggle{
+  display:flex;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border);
+}
+.vt-btn{
+  padding:.35rem .6rem;font-size:.75rem;cursor:pointer;border:none;
+  background:transparent;color:var(--text3);transition:all .2s;font-family:var(--sans);
+}
+.vt-btn.active{background:var(--accent-glow);color:var(--accent2)}
+
+/* ── NO RESULTS ── */
+.no-results{text-align:center;padding:4rem 2rem;color:var(--text3);font-size:.95rem;grid-column:1/-1}
+.no-results span{display:block;font-size:2.5rem;margin-bottom:.75rem;opacity:.5}
+
+/* ── FOOTER ── */
+.footer{
+  max-width:1280px;margin:0 auto;padding:2.5rem 2rem;
+  border-top:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+}
+.footer-col h4{font-family:var(--mono);font-weight:600;font-size:.85rem;margin-bottom:.6rem}
+.footer-col p{font-size:.78rem;color:var(--text3);line-height:1.8}
+.footer-links{display:flex;flex-direction:column;gap:.35rem}
+.footer-links a{color:var(--text3);text-decoration:none;font-size:.78rem;transition:color .2s}
+.footer-links a:hover{color:var(--accent2)}
+.affiliate-box{
+  grid-column:1/-1;font-size:.72rem;color:var(--text3);
+  background:var(--bg2);padding:1rem 1.25rem;border-radius:var(--radius);
+  border:1px solid var(--border);line-height:1.7;margin-top:.5rem;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.card{animation:cardIn .4s ease-out both}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .header{padding:1.5rem 1rem 1rem}
+  .nav-tabs,.filters-row,.grid-wrap{padding-left:1rem;padding-right:1rem}
+  .product-grid{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr}
+  .header-top{flex-direction:column;align-items:flex-start}
+  .nav-right{margin-left:0}
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--border2)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<header class="header" id="top">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-ring"><div class="logo-dot"></div></div>
+      <div class="logo-text">Scope<span>Deals</span></div>
+    </div>
+    <div class="header-badges">
+      <div class="badge"><span class="badge-dot live"></span> Prices updated live</div>
+      <div class="badge"><span class="badge-dot count"></span> <span id="totalCount">0</span> products tracked</div>
+    </div>
+  </div>
+  <p class="tagline">The simplest way to compare <strong>smart telescopes</strong> and <strong>astrophotography gear</strong>. Every model, side by side — sorted by value so you always get the best deal for your stargazing setup.</p>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav-tabs" id="navTabs">
+  <button class="tab active" data-cat="all">All Gear <span class="tab-count" id="countAll">0</span></button>
+  <button class="tab" data-cat="smart-telescope">Smart Telescopes <span class="tab-count" id="countSmart">0</span></button>
+  <button class="tab" data-cat="camera">Astro Cameras <span class="tab-count" id="countCamera">0</span></button>
+  <button class="tab" data-cat="mount">Mounts & Trackers <span class="tab-count" id="countMount">0</span></button>
+  <button class="tab" data-cat="telescope">Imaging Telescopes <span class="tab-count" id="countTelescope">0</span></button>
+  <button class="tab" data-cat="accessory">Filters & Accessories <span class="tab-count" id="countAccessory">0</span></button>
+  <div class="nav-right">
+    <div class="view-toggle">
+      <button class="vt-btn active" id="vGrid" onclick="setView('grid')">◫ Cards</button>
+      <button class="vt-btn" id="vTable" onclick="setView('table')">☰ Table</button>
+    </div>
+  </div>
+</nav>
+
+<!-- FILTERS -->
+<div class="filters-row">
+  <div class="f-group">
+    <span class="f-label">Brand</span>
+    <select class="f-select" id="fBrand"><option value="all">All Brands</option></select>
+  </div>
+  <div class="f-group">
+    <span class="f-label">Max $</span>
+    <input type="number" class="f-input" id="fMax" placeholder="No limit">
+  </div>
+  <div class="f-group">
+    <span class="f-label">Sort</span>
+    <select class="f-select" id="fSort">
+      <option value="price-asc">Price: Low → High</option>
+      <option value="price-desc">Price: High → Low</option>
+      <option value="discount">Biggest Savings</option>
+      <option value="name">Name A → Z</option>
+      <option value="aperture">Aperture (largest)</option>
+      <option value="weight">Weight (lightest)</option>
+    </select>
+  </div>
+  <button class="f-btn" id="fDeals" onclick="toggleDeals()">Deals Only</button>
+  <div class="f-spacer"></div>
+  <div class="results-info" id="resultsInfo">—</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="grid-wrap" id="gridWrap">
+  <div class="product-grid" id="productGrid"></div>
+  <div class="table-view" id="tableView">
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="name">Product <span class="sa">▲</span></th>
+          <th data-sort="price">Price <span class="sa">▲</span></th>
+          <th data-sort="aperture">Aperture <span class="sa">▲</span></th>
+          <th data-sort="focalLength">Focal <span class="sa">▲</span></th>
+          <th data-sort="sensor">Sensor <span class="sa">▲</span></th>
+          <th data-sort="weight">Weight <span class="sa">▲</span></th>
+          <th data-sort="discount">Save <span class="sa">▲</span></th>
+          <th>Retailer</th>
+          <th style="text-align:right">Link</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-col">
+    <h4>About ScopeDeals</h4>
+    <p>We track smart telescope and astrophotography gear prices across major astronomy retailers so you can find the best deals in one place. Our specs come from manufacturer data and are updated regularly. Whether you're a beginner picking your first smart scope or an experienced imager hunting for a deal, we've got you covered.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <div class="footer-links">
+      <a href="#top">Back to top</a>
+      <a href="mailto:hello@scopedeals.com">Contact us</a>
+      <a href="#" onclick="document.querySelector('[data-cat=smart-telescope]').click();return false">Smart Telescopes</a>
+      <a href="#" onclick="document.querySelector('[data-cat=camera]').click();return false">Astro Cameras</a>
+      <a href="#" onclick="document.querySelector('[data-cat=mount]').click();return false">Mounts & Trackers</a>
+    </div>
+  </div>
+  <div class="affiliate-box">
+    <strong>Disclosure:</strong> ScopeDeals is reader-supported. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you. This helps us keep the site running and the price data flowing. We independently curate every product listed — commissions never influence our rankings or featured picks.
+  </div>
+</footer>
+
+</div><!-- /page -->
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// PRODUCT DATABASE — Real products with real specs
+// Replace affiliateUrl values with your actual affiliate links
+// ════════════════════════════════════════════════════════════════
+const products = [
+  {id:1,name:"Seestar S30 Pro",brand:"ZWO",category:"smart-telescope",price:499.0,msrp:499.0,
+   aperture:"30mm",focalLength:"90mm",fRatio:"f/3",sensor:"Sony IMX585 (4K)",resolution:"8.3 MP",
+   fov:"3.5° × 2°",battery:"6h",storage:"128GB",weight:"2.2 kg",
+   highlight:"NFC tap-to-pair, 8K mosaic, Milky Way AI mode",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG",bestValue:true},
+
+  {id:2,name:"Seestar S30",brand:"ZWO",category:"smart-telescope",price:349.0,msrp:399.0,
+   aperture:"30mm",focalLength:"90mm",fRatio:"f/3",sensor:"Sony IMX662",resolution:"2.1 MP",
+   fov:"1.5° × 0.8°",battery:"6h",storage:"64GB",weight:"2.0 kg",
+   highlight:"Most affordable smart telescope, great starter",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:3,name:"DWARF 3",brand:"DwarfLab",category:"smart-telescope",price:499.0,msrp:599.0,
+   aperture:"24mm",focalLength:"100mm",fRatio:"f/4.2",sensor:"Sony IMX678 (dual)",resolution:"8.4 MP",
+   fov:"2.2° × 1.7°",battery:"10h",storage:"128GB",weight:"1.1 kg",
+   highlight:"Dual camera (telephoto + wide), 10hr battery, AI tracking",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:4,name:"DWARF Mini",brand:"DwarfLab",category:"smart-telescope",price:399.0,msrp:399.0,
+   aperture:"24mm",focalLength:"75mm",fRatio:"f/3.1",sensor:"Sony IMX662",resolution:"2.1 MP",
+   fov:"2.0° × 1.1°",battery:"5h",storage:"64GB",weight:"0.84 kg",
+   highlight:"Ultra-portable at under 1kg, setup in 3 minutes",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:5,name:"Odyssey Pro",brand:"Unistellar",category:"smart-telescope",price:2499.0,msrp:2499.0,
+   aperture:"85mm",focalLength:"320mm",fRatio:"f/3.8",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"45.2' × 33.9'",battery:"5h",storage:"App-based",weight:"4.5 kg",
+   highlight:"Premium optics, built-in eyepiece, citizen science program",
+   retailer:"Unistellar",affiliateUrl:"https://unistellar.com/?ref=YOUR-TAG"},
+
+  {id:6,name:"Odyssey",brand:"Unistellar",category:"smart-telescope",price:1699.0,msrp:1699.0,
+   aperture:"85mm",focalLength:"320mm",fRatio:"f/3.8",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"45.2' × 33.9'",battery:"5h",storage:"App-based",weight:"4.2 kg",
+   highlight:"Same optics as Pro but no eyepiece, excellent deep-sky",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:7,name:"Celestron Origin Mark II",brand:"Celestron",category:"smart-telescope",price:3499.0,msrp:3999.0,
+   aperture:"152mm (6\\\")",focalLength:"381mm",fRatio:"f/2.5",sensor:"Sony IMX678 (Starvis 2)",resolution:"8.4 MP",
+   fov:"2.1° × 1.6°",battery:"AC power",storage:"App-based",weight:"15.4 kg",
+   highlight:"Largest aperture, RASA optics, upgradeable sensor, observatory-class",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG",editorsPick:true},
+
+  {id:8,name:"Celestron Origin",brand:"Celestron",category:"smart-telescope",price:2699.0,msrp:3499.0,
+   aperture:"152mm (6\\\")",focalLength:"381mm",fRatio:"f/2.5",sensor:"Sony IMX533",resolution:"9.1 MP",
+   fov:"1.9° × 1.3°",battery:"AC power",storage:"App-based",weight:"15.4 kg",
+   highlight:"Original RASA smart telescope, now discounted with Mark II launch",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:9,name:"Vespera Pro",brand:"Vaonis",category:"smart-telescope",price:2490.0,msrp:2490.0,
+   aperture:"50mm",focalLength:"250mm",fRatio:"f/5",sensor:"Sony IMX676",resolution:"12.3 MP",
+   fov:"1.6° × 1.2°",battery:"4h",storage:"App-based",weight:"5.0 kg",
+   highlight:"Highest resolution sensor, quad-band mosaic, beautiful design",
+   retailer:"Vaonis",affiliateUrl:"https://vaonis.com/?ref=YOUR-TAG"},
+
+  {id:10,name:"Vespera II",brand:"Vaonis",category:"smart-telescope",price:1499.0,msrp:1499.0,
+   aperture:"50mm",focalLength:"200mm",fRatio:"f/4",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"2.4° × 1.6°",battery:"4h",storage:"App-based",weight:"5.0 kg",
+   highlight:"Premium build quality, wide field of view, French-designed",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:11,name:"Hestia",brand:"Vaonis",category:"smart-telescope",price:399.0,msrp:449.0,
+   aperture:"N/A (phone lens)",focalLength:"Phone-based",fRatio:"f/—",sensor:"Your smartphone",resolution:"Phone",
+   fov:"Phone",battery:"3h",storage:"Phone",weight:"0.75 kg",
+   highlight:"Smartphone-powered, great for Moon & Sun photography",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:20,name:"ASI533MC Pro (Cooled)",brand:"ZWO",category:"camera",price:799.0,msrp:799.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX533",resolution:"9.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.45 kg",
+   highlight:"Zero amp glow, cooled to -35°C, square 1\\\" sensor",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG"},
+
+  {id:21,name:"ASI2600MC Pro (Cooled)",brand:"ZWO",category:"camera",price:1549.0,msrp:1549.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX571",resolution:"26.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.56 kg",
+   highlight:"APS-C sized sensor, pro-grade deep sky imaging",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:22,name:"ASI585MC (Uncooled)",brand:"ZWO",category:"camera",price:339.0,msrp:339.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.15 kg",
+   highlight:"Same sensor as Seestar S30 Pro, planetary + deep sky",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG",bestValue:true},
+
+  {id:23,name:"Nighthawk II 2600",brand:"Player One",category:"camera",price:1399.0,msrp:1399.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX571",resolution:"26.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.52 kg",
+   highlight:"Cooled APS-C, native USB3, low read noise",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:24,name:"294MC Pro (Cooled)",brand:"ZWO",category:"camera",price:899.0,msrp:1049.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX294",resolution:"11.3 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.41 kg",
+   highlight:"Large 4/3\\\" sensor, great for wide-field, cooled",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG"},
+
+  {id:30,name:"AM5 Harmonic Mount",brand:"ZWO",category:"mount",price:1599.0,msrp:1599.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"5.0 kg (head)",
+   highlight:"13kg payload, harmonic drive, best portable EQ mount",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG",editorsPick:true},
+
+  {id:31,name:"Star Adventurer GTi",brand:"Sky-Watcher",category:"mount",price:499.0,msrp:549.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"AA batteries",storage:"—",weight:"1.2 kg (head)",
+   highlight:"Wi-Fi GoTo, 5kg payload, great beginner EQ tracker",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG",bestValue:true},
+
+  {id:32,name:"RST-135E",brand:"Rainbow Astro",category:"mount",price:2899.0,msrp:2899.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"4.6 kg (head)",
+   highlight:"13.5kg payload, strain wave, ultra-precise tracking",
+   retailer:"OPT Telescopes",affiliateUrl:"https://optcorp.com/?ref=YOUR-TAG"},
+
+  {id:33,name:"Move Shoot Move Rotator",brand:"MSM",category:"mount",price:329.0,msrp:359.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"Built-in Li-ion",storage:"—",weight:"0.68 kg",
+   highlight:"Ultra-portable star tracker for DSLR nightscapes",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:34,name:"AZ-GTi Mount",brand:"Sky-Watcher",category:"mount",price:349.0,msrp:399.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"AA batteries",storage:"—",weight:"1.6 kg (head)",
+   highlight:"Alt-Az GoTo, Wi-Fi controlled, converts to EQ mode",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:40,name:"L-eXtreme Dual Band",brand:"Optolong",category:"accessory",price:219.0,msrp:219.0,
+   aperture:"2\\\" / 48mm",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.04 kg",
+   highlight:"Ha + OIII dual narrowband, best light pollution filter",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG",bestValue:true},
+
+  {id:41,name:"L-Pro Broadband Filter",brand:"Optolong",category:"accessory",price:109.0,msrp:129.0,
+   aperture:"2\\\" / 48mm",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.04 kg",
+   highlight:"Best general-purpose light pollution filter for color cameras",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:42,name:"ASIAIR Plus (64GB)",brand:"ZWO",category:"accessory",price:299.0,msrp:299.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"64GB",weight:"0.23 kg",
+   highlight:"Wireless astrophotography controller, autoguiding, plate solving",
+   retailer:"High Point Scientific",affiliateUrl:"https://highpointscientific.com/?ref=YOUR-TAG"},
+
+  {id:43,name:"Celestron StarSense Autoalign",brand:"Celestron",category:"accessory",price:349.0,msrp:399.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.36 kg",
+   highlight:"Auto-aligns any Celestron GoTo scope, plate solving tech",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:44,name:"Svbony UV/IR Cut Filter",brand:"Svbony",category:"accessory",price:29.0,msrp:39.0,
+   aperture:"1.25\\\"",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.02 kg",
+   highlight:"Essential UV/IR block for clean color imaging, budget pick",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/EXAMPLE?tag=YOUR-TAG"},
+
+  {id:45,name:"Pegasus FocusCube 3",brand:"Pegasus Astro",category:"accessory",price:299.0,msrp:299.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"0.14 kg",
+   highlight:"Electronic auto-focuser, temp compensation, ASCOM compatible",
+   retailer:"OPT Telescopes",affiliateUrl:"https://optcorp.com/?ref=YOUR-TAG"},
+
+  {id:50,name:"Askar 71F Quadruplet APO",brand:"Askar",category:"telescope",price:589.0,msrp:589.0,
+   aperture:"71mm",focalLength:"490mm",fRatio:"f/6.9",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"2.5 kg",
+   highlight:"Built-in flattener, quad APO with ED glass, beginner-friendly imaging scope",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0D2KJNVMM?tag=YOUR-TAG",bestValue:true},
+
+  {id:51,name:"Askar 80ED Refractor",brand:"Askar",category:"telescope",price:449.0,msrp:449.0,
+   aperture:"80mm",focalLength:"560mm",fRatio:"f/7",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"3.2 kg",
+   highlight:"ED glass doublet, dual-speed R&P focuser, great for visual + imaging",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0F7QWSGL3?tag=YOUR-TAG"},
+
+  {id:52,name:"Askar 103APO Triplet",brand:"Askar",category:"telescope",price:1199.0,msrp:1199.0,
+   aperture:"103mm",focalLength:"700mm",fRatio:"f/6.8",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"5.8 kg",
+   highlight:"Triplet APO with ED glass, 4 configs with optional reducers, top mid-range",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0CGXB8BT7?tag=YOUR-TAG",editorsPick:true},
+
+  {id:53,name:"Askar 60F Quadruplet Petzval",brand:"Askar",category:"telescope",price:399.0,msrp:399.0,
+   aperture:"60mm",focalLength:"410mm",fRatio:"f/6.8",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"2.5 kg",
+   highlight:"Built-in field flattener, full-frame support, ultra-portable astrograph",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0FJLJTJP1?tag=YOUR-TAG"},
+
+  {id:54,name:"Askar 130PHQ Flatfield",brand:"Askar",category:"telescope",price:2399.0,msrp:2399.0,
+   aperture:"130mm",focalLength:"1000mm",fRatio:"f/7.7",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"8.5 kg",
+   highlight:"Quadruplet with 2× ED glass, self-flattening, medium-frame 60mm circle",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0BYMW3D71?tag=YOUR-TAG"},
+
+  {id:55,name:"Askar 80PHQ Flatfield",brand:"Askar",category:"telescope",price:999.0,msrp:999.0,
+   aperture:"80mm",focalLength:"600mm",fRatio:"f/7.5",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"4.2 kg",
+   highlight:"Self-flattening quadruplet, 2× ED glass, no extra flattener needed",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0BYMKDLV8?tag=YOUR-TAG"},
+
+  {id:56,name:"Askar SQA106 Quintuplet Petzval",brand:"Askar",category:"telescope",price:1899.0,msrp:1899.0,
+   aperture:"106mm",focalLength:"510mm",fRatio:"f/4.8",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"6.0 kg",
+   highlight:"Fast f/4.8 quintuplet Petzval astrograph, full-frame, deep-sky beast",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0DS9ZPM4W?tag=YOUR-TAG"},
+
+  {id:57,name:"Askar V Modular Set (60+80mm)",brand:"Askar",category:"telescope",price:1099.0,msrp:1099.0,
+   aperture:"60+80mm",focalLength:"360-500mm",fRatio:"f/6-6.25",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"4.0 kg",
+   highlight:"2 objective lenses + 3 accessories, 8 configurations in 1 system",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0C4TCT424?tag=YOUR-TAG"},
+
+  {id:58,name:"Sharpstar 150mm f/2.8 HNT",brand:"Sharpstar",category:"telescope",price:1799.0,msrp:1799.0,
+   aperture:"150mm",focalLength:"420mm",fRatio:"f/2.8",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"8.2 kg",
+   highlight:"Ultra-fast f/2.8 Newtonian astrograph, full-frame, 97% reflective coating",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0CKP9NVLZ?tag=YOUR-TAG"},
+
+  {id:59,name:"SVBONY SV503 70ED Refractor",brand:"SVBONY",category:"telescope",price:269.0,msrp:299.0,
+   aperture:"70mm",focalLength:"474mm",fRatio:"f/6.78",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"2.1 kg",
+   highlight:"Budget ED refractor with built-in field flattener, great entry point",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0DKWG11N7?tag=YOUR-TAG"},
+
+  {id:60,name:"SVBONY SV550 80ED Triplet APO",brand:"SVBONY",category:"telescope",price:549.0,msrp:599.0,
+   aperture:"80mm",focalLength:"480mm",fRatio:"f/6",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"3.0 kg",
+   highlight:"Triplet APO, 2.5\\\" micro-reduction focuser, excellent value deep-sky scope",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0C5H6TD22?tag=YOUR-TAG"},
+
+  {id:61,name:"ASI2600MM Pro (Mono Cooled)",brand:"ZWO",category:"camera",price:1699.0,msrp:1699.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX571",resolution:"26.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.56 kg",
+   highlight:"APS-C mono, -35°C cooling, zero amp glow, pro narrowband imaging",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0BBKY96RV?tag=YOUR-TAG"},
+
+  {id:62,name:"ASI2400MC Pro (Full-Frame)",brand:"ZWO",category:"camera",price:2999.0,msrp:2999.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX410",resolution:"24 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.72 kg",
+   highlight:"Full-frame 36×24mm cooled color camera, ultimate deep-sky one-shot",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B094XSYZYS?tag=YOUR-TAG"},
+
+  {id:63,name:"ASI585MC Air (All-in-One)",brand:"ZWO",category:"camera",price:699.0,msrp:699.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0 + WiFi",weight:"0.35 kg",
+   highlight:"Camera + guide cam + ASIAIR in one unit, beginner imaging kit",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0FBFHFP1B?tag=YOUR-TAG",editorsPick:true},
+
+  {id:64,name:"ASI662MC (Planetary)",brand:"ZWO",category:"camera",price:199.0,msrp:199.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX662",resolution:"2.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.12 kg",
+   highlight:"Same sensor as Seestar, 102fps, ideal for Moon/planets/Sun",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0B4SYLGFS?tag=YOUR-TAG"},
+
+  {id:65,name:"ASI183MC (Deep Sky Uncooled)",brand:"ZWO",category:"camera",price:399.0,msrp:399.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX183",resolution:"20.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.14 kg",
+   highlight:"20MP 1\\\" sensor, versatile for EAA + deep-sky + lunar imaging",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B07BPV6R1K?tag=YOUR-TAG"},
+
+  {id:66,name:"ASI290MM Mini (Autoguider)",brand:"ZWO",category:"camera",price:149.0,msrp:149.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX290",resolution:"2.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 2.0",weight:"0.06 kg",
+   highlight:"Ultra-compact mono guide camera, PHD2 compatible, essential for imaging rigs",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B07BPP91VN?tag=YOUR-TAG"},
+
+  {id:67,name:"ASI294MC Pro (Cooled 4/3\\\")",brand:"ZWO",category:"camera",price:899.0,msrp:1049.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX294",resolution:"11.7 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.41 kg",
+   highlight:"Large micro-4/3 sensor, cooled, wide-field deep-sky color imaging",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B07BPRBVY7?tag=YOUR-TAG"},
+
+  {id:68,name:"ASI294MM Pro (Mono 4/3\\\")",brand:"ZWO",category:"camera",price:1099.0,msrp:1099.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX294",resolution:"11.7 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.41 kg",
+   highlight:"Mono version for narrowband imaging, cooled, micro-4/3 sensor",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B094XVBZZ2?tag=YOUR-TAG"},
+
+  {id:69,name:"AM3 Harmonic Mount",brand:"ZWO",category:"mount",price:999.0,msrp:999.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"3.5 kg (head)",
+   highlight:"8kg payload harmonic drive, lighter alternative to AM5, WiFi",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0CX6MBWBV?tag=YOUR-TAG"},
+
+  {id:70,name:"SVBONY SV226 Filter Drawer",brand:"SVBONY",category:"accessory",price:59.0,msrp:69.0,
+   aperture:"2\\\"",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.18 kg",
+   highlight:"Quick-swap filter drawer, M42-M48 adapters, magnetic holder",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0D5V3CJHF?tag=YOUR-TAG"},
+
+  {id:71,name:"Optolong L-Quad Enhance",brand:"Optolong",category:"accessory",price:179.0,msrp:199.0,
+   aperture:"2\\\"",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.04 kg",
+   highlight:"Quad-band filter (Ha+Hb+OIII+SII), best all-in-one narrowband filter",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B0C7LXGWKW?tag=YOUR-TAG"},
+
+  {id:72,name:"ZWO EAF (Electronic Auto Focuser)",brand:"ZWO",category:"accessory",price:189.0,msrp:199.0,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"USB/12V",storage:"—",weight:"0.2 kg",
+   highlight:"Motorized focuser for precise autofocus, works with ASIAIR + ASCOM",
+   retailer:"Amazon",affiliateUrl:"https://amazon.com/dp/B07WGB3TKZ?tag=YOUR-TAG"},
+
+  {id:73,name:"Unistellar eVscope 2",brand:"Unistellar",category:"smart-telescope",price:2999,msrp:2999,
+   aperture:"114mm",focalLength:"450mm",fRatio:"f/4",sensor:"Sony IMX347",resolution:"6.2 MP",
+   fov:"34' × 47'",battery:"5h",storage:"App-based",weight:"9.0 kg",
+   highlight:"Built-in Nikon eyepiece for live visual + digital hybrid viewing",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/unistellar-evscope-2?ref=YOUR-TAG"},
+
+  {id:74,name:"Vaonis Vespera II X-Edition",brand:"Vaonis",category:"smart-telescope",price:1699,msrp:1699,
+   aperture:"50mm",focalLength:"200mm",fRatio:"f/4",sensor:"Sony IMX585",resolution:"8.3 MP",
+   fov:"2.4° × 1.6°",battery:"4h",storage:"App-based",weight:"5.0 kg",
+   highlight:"Limited edition transparent shell, same specs as Vespera II",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/vaonis-vespera-ii-x-edition?ref=YOUR-TAG"},
+
+  {id:75,name:"ASI6200MC Pro (Full-Frame Color)",brand:"ZWO",category:"camera",price:3999,msrp:3999,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX455",resolution:"62 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.9 kg",
+   highlight:"Full-frame 62MP cooled color, flagship ZWO camera, zero amp glow",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-asi6200mc-pro?ref=YOUR-TAG",editorsPick:true},
+
+  {id:76,name:"ASI6200MM Pro (Full-Frame Mono)",brand:"ZWO",category:"camera",price:3999,msrp:3999,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX455",resolution:"62 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.9 kg",
+   highlight:"Full-frame 62MP cooled mono, ultimate narrowband imaging camera",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-asi6200mm-pro?ref=YOUR-TAG"},
+
+  {id:77,name:"ASI2600MC Air (Wireless All-in-One)",brand:"ZWO",category:"camera",price:1999,msrp:1999,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX571",resolution:"26.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0 + WiFi",weight:"0.58 kg",
+   highlight:"APS-C camera + guide cam + ASIAIR in one wireless unit, cooled",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-asi2600mc-air?ref=YOUR-TAG"},
+
+  {id:78,name:"ASI183MM Pro (Mono Cooled 1\")",brand:"ZWO",category:"camera",price:599,msrp:599,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"Sony IMX183",resolution:"20.1 MP",
+   fov:"Lens dependent",battery:"—",storage:"USB 3.0",weight:"0.41 kg",
+   highlight:"20MP 1\" mono cooled, high-res planetary + narrowband deep sky",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-asi183mm-pro?ref=YOUR-TAG"},
+
+  {id:79,name:"AM5N Harmonic Mount (Head)",brand:"ZWO",category:"mount",price:1699,msrp:1699,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"5.5 kg (head)",
+   highlight:"33lb payload, ±10\" PE, Bluetooth + WiFi, internal cable routing",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-am5n-harmonic-drive-equatorial-mount?ref=YOUR-TAG",editorsPick:true},
+
+  {id:80,name:"AM5N Mount + Tripod Kit",brand:"ZWO",category:"mount",price:1999,msrp:1999,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"7.8 kg (total)",
+   highlight:"Complete AM5N + TC40 carbon tripod, ready to image out of box",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-am5n-harmonic-drive-equatorial-mount-with-tripod?ref=YOUR-TAG",bestValue:true},
+
+  {id:81,name:"AM3N Harmonic Mount (Head)",brand:"ZWO",category:"mount",price:1099,msrp:1099,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"4.1 kg (head)",
+   highlight:"28lb payload, ultra-portable, powered DEC hub, Bluetooth",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-am3n-harmonic-drive-equatorial-mount?ref=YOUR-TAG"},
+
+  {id:82,name:"AM7 Harmonic Mount (Head)",brand:"ZWO",category:"mount",price:2599,msrp:2599,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"12V DC",storage:"—",weight:"6.8 kg (head)",
+   highlight:"66lb payload, largest ZWO harmonic, for big refractors + Newtonians",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-am7-harmonic-drive-equatorial-mount-head?ref=YOUR-TAG"},
+
+  {id:83,name:"TC40 Carbon Fiber Tripod",brand:"ZWO",category:"mount",price:349,msrp:349,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"2.3 kg",
+   highlight:"110lb capacity carbon tripod, pairs with AM3/AM5/AM7 mounts",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-tc40-carbon-fiber-tripod?ref=YOUR-TAG"},
+
+  {id:84,name:"Apertura 75Q Quadruplet APO",brand:"Apertura",category:"telescope",price:649,msrp:649,
+   aperture:"75mm",focalLength:"405mm",fRatio:"f/5.4",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"3.2 kg",
+   highlight:"4-element with 0.75x reducer, full-frame, HPS exclusive house brand",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/apertura-75q-quadruplet-apo?ref=YOUR-TAG",bestValue:true},
+
+  {id:85,name:"Apertura CarbonStar 200 Newtonian",brand:"Apertura",category:"telescope",price:899,msrp:899,
+   aperture:"200mm (8\")",focalLength:"800mm",fRatio:"f/4",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"7.5 kg",
+   highlight:"Fast f/4 carbon fiber imaging Newtonian, 8\" aperture for faint targets",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/apertura-carbonstar-200?ref=YOUR-TAG"},
+
+  {id:86,name:"ZWO FF80 APO Refractor",brand:"ZWO",category:"telescope",price:599,msrp:599,
+   aperture:"80mm",focalLength:"500mm",fRatio:"f/6.25",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"3.0 kg",
+   highlight:"ZWO's own 4-element flat-field APO, perfect ASIAIR ecosystem match",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-ff80-apo?ref=YOUR-TAG"},
+
+  {id:87,name:"Celestron Nebula Filter (for Origin)",brand:"Celestron",category:"accessory",price:149,msrp:149,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.05 kg",
+   highlight:"Dual-band nebula filter designed specifically for Celestron Origin",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/celestron-nebula-filter-for-origin?ref=YOUR-TAG"},
+
+  {id:88,name:"Celestron Origin Carry Bag",brand:"Celestron",category:"accessory",price:129,msrp:129,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"1.5 kg",
+   highlight:"Padded carry bag for Celestron Origin smart telescope",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/celestron-padded-carry-bag-for-origin?ref=YOUR-TAG"},
+
+  {id:89,name:"ZWO EAF Pro (Electronic Auto Focuser)",brand:"ZWO",category:"accessory",price:249,msrp:249,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"USB/12V",storage:"—",weight:"0.22 kg",
+   highlight:"Upgraded auto focuser with higher torque, USB-C, temp sensor built-in",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-eaf-pro?ref=YOUR-TAG"},
+
+  {id:90,name:"ZWO Camera Angle Adjuster",brand:"ZWO",category:"accessory",price:89,msrp:89,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"0.15 kg",
+   highlight:"Rotate camera sensor without loosening, precision framing tool",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-camera-angle-adjuster?ref=YOUR-TAG"},
+
+  {id:91,name:"Seestar Tripod + TH10 Fluid Head",brand:"ZWO",category:"accessory",price:129,msrp:129,
+   aperture:"—",focalLength:"—",fRatio:"—",sensor:"—",resolution:"—",
+   fov:"—",battery:"—",storage:"—",weight:"1.8 kg",
+   highlight:"Official Seestar tripod with fluid head for smoother tracking & EQ mode",
+   retailer:"High Point Scientific",affiliateUrl:"https://www.highpointscientific.com/zwo-seestar-tripod-th10?ref=YOUR-TAG"},
+];
+
+// Computed
+products.forEach(p => {
+  p.discount = p.msrp > p.price ? Math.round((1 - p.price / p.msrp) * 100) : 0;
+  p.apertureNum = parseInt(p.aperture) || 0;
+  p.focalNum = parseInt(p.focalLength) || 0;
+  p.weightNum = parseFloat(p.weight) || 999;
+});
+
+// ── State
+let activeCat = 'all';
+let dealsOnly = false;
+let viewMode = 'grid';
+let tblSortCol = 'price';
+let tblSortDir = 'asc';
+
+// ── Populate brands
+function populateBrands() {
+  const brands = [...new Set(products.map(p => p.brand))].sort();
+  const sel = document.getElementById('fBrand');
+  brands.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.appendChild(o); });
+}
+
+// ── Render
+function render() {
+  const brand = document.getElementById('fBrand').value;
+  const maxP = parseFloat(document.getElementById('fMax').value) || Infinity;
+  const sortBy = document.getElementById('fSort').value;
+
+  let items = products.filter(p => {
+    if (activeCat !== 'all' && p.category !== activeCat) return false;
+    if (brand !== 'all' && p.brand !== brand) return false;
+    if (p.price > maxP) return false;
+    if (dealsOnly && p.discount < 5) return false;
+    return true;
+  });
+
+  // Sort
+  items.sort((a, b) => {
+    switch (sortBy) {
+      case 'price-asc': return a.price - b.price;
+      case 'price-desc': return b.price - a.price;
+      case 'discount': return b.discount - a.discount;
+      case 'name': return a.name.localeCompare(b.name);
+      case 'aperture': return b.apertureNum - a.apertureNum;
+      case 'weight': return a.weightNum - b.weightNum;
+      default: return a.price - b.price;
+    }
+  });
+
+  // Cards
+  const grid = document.getElementById('productGrid');
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="no-results"><span>☾</span>No products match your filters. Try broadening your search.</div>';
+  } else {
+    grid.innerHTML = items.map((p, i) => {
+      const saveClass = p.discount >= 20 ? 'save-hot' : p.discount >= 10 ? 'save-good' : 'save-ok';
+      const typeClass = p.category === 'smart-telescope' ? 'type-smart' : p.category === 'camera' ? 'type-camera' : p.category === 'mount' ? 'type-mount' : p.category === 'telescope' ? 'type-telescope' : 'type-accessory';
+      const typeLabel = p.category === 'smart-telescope' ? 'Smart Scope' : p.category === 'camera' ? 'Camera' : p.category === 'mount' ? 'Mount' : p.category === 'telescope' ? 'Telescope' : 'Accessory';
+      const cardClass = p.bestValue ? 'best-value' : p.editorsPick ? 'editors-pick' : '';
+      return `<div class="card ${cardClass}" style="animation-delay:${i * 0.05}s">
+        <div class="card-header">
+          <div>
+            <div class="card-brand">${p.brand}</div>
+            <div class="card-name">${p.name}</div>
+          </div>
+          <span class="card-type-badge ${typeClass}">${typeLabel}</span>
+        </div>
+        <div class="card-specs">
+          ${p.aperture !== '—' ? `<div class="spec-item"><span class="spec-label">Aperture</span><span class="spec-value">${p.aperture}</span></div>` : ''}
+          ${p.focalLength !== '—' ? `<div class="spec-item"><span class="spec-label">Focal Length</span><span class="spec-value">${p.focalLength}</span></div>` : ''}
+          ${p.sensor !== '—' ? `<div class="spec-item"><span class="spec-label">Sensor</span><span class="spec-value">${p.sensor}</span></div>` : ''}
+          ${p.resolution !== '—' ? `<div class="spec-item"><span class="spec-label">Resolution</span><span class="spec-value">${p.resolution}</span></div>` : ''}
+          <div class="spec-item"><span class="spec-label">Weight</span><span class="spec-value">${p.weight}</span></div>
+          ${p.battery !== '—' ? `<div class="spec-item"><span class="spec-label">Battery</span><span class="spec-value">${p.battery}</span></div>` : ''}
+          ${p.storage && p.storage !== '—' ? `<div class="spec-item"><span class="spec-label">Storage</span><span class="spec-value">${p.storage}</span></div>` : ''}
+          ${p.fRatio !== '—' ? `<div class="spec-item"><span class="spec-label">F-Ratio</span><span class="spec-value">${p.fRatio}</span></div>` : ''}
+        </div>
+        <div style="font-size:.78rem;color:var(--text2);margin-bottom:.75rem;min-height:2.4em">✦ ${p.highlight}</div>
+        <div class="card-footer">
+          <div class="price-block">
+            <span class="price-now">$${p.price.toLocaleString()}</span>
+            ${p.msrp > p.price ? `<span class="price-was">$${p.msrp.toLocaleString()}</span>` : ''}
+            ${p.discount > 0 ? `<div><span class="price-save ${saveClass}">Save ${p.discount}%</span></div>` : ''}
+            <div class="retailer-tag">via ${p.retailer}</div>
+          </div>
+          <a href="${p.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="buy-btn">
+            View Deal
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l5 5-5 5"/></svg>
+          </a>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // Table view
+  const tbody = document.getElementById('tableBody');
+  let tblItems = [...items];
+  tblItems.sort((a, b) => {
+    let va = a[tblSortCol], vb = b[tblSortCol];
+    if (tblSortCol === 'name') { va = a.name; vb = b.name; return tblSortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va); }
+    if (tblSortCol === 'aperture') { va = a.apertureNum; vb = b.apertureNum; }
+    if (tblSortCol === 'weight') { va = a.weightNum; vb = b.weightNum; }
+    if (tblSortCol === 'focalLength') { va = a.focalNum; vb = b.focalNum; }
+    return tblSortDir === 'asc' ? (va||0) - (vb||0) : (vb||0) - (va||0);
+  });
+  tbody.innerHTML = tblItems.map(p => {
+    const typeClass = p.category === 'smart-telescope' ? 'type-smart' : p.category === 'camera' ? 'type-camera' : p.category === 'mount' ? 'type-mount' : p.category === 'telescope' ? 'type-telescope' : 'type-accessory';
+    const saveClass = p.discount >= 20 ? 'save-hot' : p.discount >= 10 ? 'save-good' : 'save-ok';
+    return `<tr>
+      <td><div class="tbl-product"><div class="tbl-badge" style="color:var(--accent2)">${p.brand.substring(0,3).toUpperCase()}</div><div><div class="tbl-name">${p.name}</div><div class="tbl-brand">${p.brand}</div></div></div></td>
+      <td><span class="tbl-price">$${p.price.toLocaleString()}</span>${p.msrp > p.price ? `<br><span style="font-size:.7rem;color:var(--text3);text-decoration:line-through">$${p.msrp.toLocaleString()}</span>` : ''}</td>
+      <td><span class="tbl-spec">${p.aperture}</span></td>
+      <td><span class="tbl-spec">${p.focalLength}</span></td>
+      <td><span class="tbl-spec">${p.sensor !== '—' ? p.sensor.split('(')[0].trim() : '—'}</span></td>
+      <td><span class="tbl-spec">${p.weight}</span></td>
+      <td>${p.discount > 0 ? `<span class="tbl-save ${saveClass}">${p.discount}%</span>` : '—'}</td>
+      <td><span style="font-size:.78rem;color:var(--text2)">${p.retailer}</span></td>
+      <td style="text-align:right"><a href="${p.affiliateUrl}" target="_blank" rel="noopener noreferrer nofollow" class="tbl-btn">View <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><path d="M5 3l5 5-5 5"/></svg></a></td>
+    </tr>`;
+  }).join('');
+
+  // Table sort headers
+  document.querySelectorAll('thead th[data-sort]').forEach(th => {
+    th.classList.toggle('sorted', th.dataset.sort === tblSortCol);
+    const arrow = th.querySelector('.sa');
+    if (arrow) arrow.textContent = th.dataset.sort === tblSortCol ? (tblSortDir === 'asc' ? '▲' : '▼') : '▲';
+  });
+
+  // Counts
+  document.getElementById('resultsInfo').textContent = `${items.length} of ${products.length} products`;
+  document.getElementById('totalCount').textContent = products.length;
+  document.getElementById('countAll').textContent = products.length;
+  document.getElementById('countSmart').textContent = products.filter(p => p.category === 'smart-telescope').length;
+  document.getElementById('countCamera').textContent = products.filter(p => p.category === 'camera').length;
+  document.getElementById('countMount').textContent = products.filter(p => p.category === 'mount').length;
+  document.getElementById('countTelescope').textContent = products.filter(p => p.category === 'telescope').length;
+  document.getElementById('countAccessory').textContent = products.filter(p => p.category === 'accessory').length;
+}
+
+// ── Tab clicks
+document.querySelectorAll('.tab[data-cat]').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCat = tab.dataset.cat;
+    render();
+  });
+});
+
+// ── Filter events
+document.querySelectorAll('.f-select, .f-input').forEach(el => {
+  el.addEventListener('change', render);
+  el.addEventListener('input', render);
+});
+
+// ── Deals toggle
+function toggleDeals() {
+  dealsOnly = !dealsOnly;
+  document.getElementById('fDeals').classList.toggle('on', dealsOnly);
+  render();
+}
+
+// ── View toggle
+function setView(mode) {
+  viewMode = mode;
+  document.getElementById('gridWrap').classList.toggle('table-mode', mode === 'table');
+  document.getElementById('vGrid').classList.toggle('active', mode === 'grid');
+  document.getElementById('vTable').classList.toggle('active', mode === 'table');
+}
+
+// ── Table sort
+document.querySelectorAll('thead th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.sort;
+    if (tblSortCol === col) tblSortDir = tblSortDir === 'asc' ? 'desc' : 'asc';
+    else { tblSortCol = col; tblSortDir = 'asc'; }
+    render();
+  });
+});
+
+// ── INIT
+populateBrands();
+render();
+</script>
+</body>
+</html>
