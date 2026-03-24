@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Compare smart telescope prices, specs, and deals. Find the best smart telescopes from Unistellar, ZWO Seestar, Celestron Origin, Vaonis, and DwarfLab. Updated daily.">
-<meta name="keywords" content="smart telescope comparison, best smart telescope 2026, Seestar S30, Celestron Origin, Unistellar Odyssey, Vaonis Vespera, DwarfLab DWARF 3, astrophotography telescope deals">
-<title>ScopeDeals — Smart Telescope & Astrophotography Price Tracker</title>
+<meta name="description" content="AstroCompare — compare smart telescopes, astrophotography cameras, mounts, and astro gear prices. Find the best deals on Unistellar, ZWO Seestar, Celestron Origin, Vaonis, Sky-Watcher, and more. Updated regularly.">
+<meta name="keywords" content="smart telescope, smart telescope comparison, best smart telescope 2026, astrophotography telescope, telescope deals, astro gear, telescope mount, equatorial mount, star tracker, Seestar S30, Seestar S50, Celestron Origin, Unistellar Odyssey, Unistellar eVscope, Vaonis Vespera, Vaonis Stellina, DwarfLab DWARF 3, ZWO ASI, astrophotography camera, astro camera, computerized telescope, goto telescope, computerized mount, sky-watcher, iOptron, astro accessories, nebula filter, light pollution filter, astrophotography gear, stargazing equipment, deep sky imaging, planetary imaging">
+<title>AstroCompare — Smart Telescope & Astrophotography Gear Price Tracker</title>
+<meta property="og:title" content="AstroCompare — Smart Telescope & Astrophotography Gear Price Tracker">
+<meta property="og:description" content="Compare smart telescope and astrophotography gear prices side by side. Find deals on mounts, cameras, telescopes, and accessories from top brands.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AstroCompare — Smart Telescope Price Comparison">
+<meta name="twitter:description" content="Compare smart telescopes, astro cameras, mounts, and astrophotography gear. Best prices, all in one place.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://astrocompare.netlify.app/">`
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -30,20 +38,66 @@ body{
 ::selection{background:var(--accent);color:#fff}
 
 /* ── STARFIELD BG ── */
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes twinkle2{0%,100%{opacity:0.7}50%{opacity:0.15}}
 body::before{
   content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
   background:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.25), transparent),
-    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.35), transparent),
-    radial-gradient(1.5px 1.5px at 15% 90%, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.2), transparent),
-    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1.5px 1.5px at 40% 35%, rgba(255,255,255,0.45), transparent),
-    radial-gradient(1px 1px at 25% 50%, rgba(255,255,255,0.2), transparent),
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(45,127,249,0.06) 0%, transparent 70%);
+    radial-gradient(1px 1px at 5% 8%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 12% 25%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 18% 60%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 22% 42%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 28% 15%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(1px 1px at 33% 78%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 38% 5%, rgba(200,220,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 44% 88%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 49% 32%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(2px 2px at 55% 50%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(200,220,255,0.75), transparent),
+    radial-gradient(1px 1px at 64% 18%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 70% 38%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 75% 92%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 80% 55%, rgba(200,220,255,0.65), transparent),
+    radial-gradient(2px 2px at 85% 12%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 88% 72%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1.5px 1.5px at 93% 28%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 97% 45%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 3% 52%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1px 1px at 7% 85%, rgba(200,220,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 15% 35%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 26% 65%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 35% 95%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(2px 2px at 47% 22%, rgba(255,240,200,0.7), transparent),
+    radial-gradient(1px 1px at 52% 80%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1px 1px at 58% 42%, rgba(200,220,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 66% 7%, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 72% 60%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 78% 30%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 83% 85%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 91% 15%, rgba(200,220,255,0.7), transparent),
+    radial-gradient(1px 1px at 96% 68%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45,127,249,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 100%, rgba(0,180,200,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 100%, rgba(45,127,249,0.05) 0%, transparent 60%);
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 9% 14%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 17% 48%, rgba(255,240,200,0.55), transparent),
+    radial-gradient(1px 1px at 23% 82%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 31% 30%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 41% 58%, rgba(200,220,255,0.6), transparent),
+    radial-gradient(1px 1px at 46% 72%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(1px 1px at 53% 12%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1.5px 1.5px at 61% 90%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 68% 25%, rgba(200,220,255,0.55), transparent),
+    radial-gradient(1px 1px at 74% 75%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1px 1px at 82% 42%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 87% 65%, rgba(255,240,200,0.6), transparent),
+    radial-gradient(1px 1px at 94% 5%, rgba(255,255,255,0.65), transparent),
+    radial-gradient(1px 1px at 99% 90%, rgba(255,255,255,0.55), transparent);
+  animation: twinkle2 7s ease-in-out infinite;
 }
 .page{position:relative;z-index:1}
 
@@ -53,23 +107,23 @@ body::before{
   border-bottom:1px solid var(--border);
 }
 .header-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.logo{display:flex;align-items:center;gap:.7rem}
-.logo-ring{
-  width:40px;height:40px;border-radius:50%;
-  border:2.5px solid var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo-icon{width:42px;height:42px;flex-shrink:0;position:relative}
+@keyframes scope-scan{
+  0%,100%{transform:rotate(-18deg)}
+  50%{transform:rotate(4deg)}
 }
-.logo-ring::after{
-  content:'';width:8px;height:8px;border-radius:50%;
-  background:var(--cyan);position:absolute;
-  animation:orbit 4s linear infinite;
+@keyframes star-pulse{
+  0%,100%{opacity:1;r:2.5px}
+  50%{opacity:0.4;r:1.5px}
 }
-@keyframes orbit{
-  0%{transform:rotate(0deg) translateX(14px)}
-  100%{transform:rotate(360deg) translateX(14px)}
+@keyframes beam-glow{
+  0%,100%{opacity:0.6}
+  50%{opacity:1}
 }
-.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent2)}
+.logo-scope{animation:scope-scan 4s ease-in-out infinite;transform-origin:28px 30px}
+.logo-star{animation:star-pulse 2s ease-in-out infinite}
+.logo-beam{animation:beam-glow 4s ease-in-out infinite}
 .logo-text{font-family:var(--mono);font-weight:700;font-size:1.3rem;letter-spacing:-0.5px}
 .logo-text span{color:var(--accent2)}
 .header-badges{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -309,8 +363,35 @@ tbody tr:hover td{background:var(--accent-glow)}
 <header class="header" id="top">
   <div class="header-top">
     <div class="logo">
-      <div class="logo-ring"><div class="logo-dot"></div></div>
-      <div class="logo-text">Scope<span>Deals</span></div>
+      <div class="logo-icon">
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <!-- Target star being observed -->
+          <circle class="logo-star" cx="7" cy="7" r="2.5" fill="#74b3ff" opacity="0.9"/>
+          <circle cx="7" cy="7" r="5" fill="none" stroke="#74b3ff" stroke-width="0.5" opacity="0.3"/>
+          <!-- Beam from scope to star -->
+          <line class="logo-beam" x1="10" y1="10" x2="20" y2="18" stroke="#2d7ff9" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6"/>
+          <!-- Telescope body (scans) -->
+          <g class="logo-scope">
+            <!-- Main tube -->
+            <rect x="17" y="20" width="18" height="8" rx="3" fill="#1c2035" stroke="#2d7ff9" stroke-width="1.5"/>
+            <!-- Eyepiece -->
+            <rect x="33" y="22" width="6" height="4" rx="1.5" fill="#2d7ff9" opacity="0.85"/>
+            <!-- Objective end -->
+            <rect x="14" y="21" width="4" height="6" rx="1" fill="#0c0e18" stroke="#74b3ff" stroke-width="1.2"/>
+            <!-- Lens glint -->
+            <circle cx="16" cy="24" r="1.5" fill="#00cec9" opacity="0.7"/>
+            <!-- Focuser knob -->
+            <rect x="24" y="28" width="4" height="3" rx="1" fill="#2d3160"/>
+            <!-- Mount post -->
+            <line x1="26" y1="28" x2="26" y2="37" stroke="#2d3160" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Tripod legs -->
+            <line x1="26" y1="37" x2="20" y2="41" stroke="#2d3160" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="26" y1="37" x2="26" y2="41" stroke="#2d3160" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="26" y1="37" x2="32" y2="41" stroke="#2d3160" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div class="logo-text">Astro<span>Compare</span></div>
     </div>
     <div class="header-badges">
       <div class="badge"><span class="badge-dot live"></span> Prices updated live</div>
@@ -330,8 +411,8 @@ tbody tr:hover td{background:var(--accent-glow)}
   <button class="tab" data-cat="accessory">Filters & Accessories <span class="tab-count" id="countAccessory">0</span></button>
   <div class="nav-right">
     <div class="view-toggle">
-      <button class="vt-btn active" id="vGrid" onclick="setView('grid')">◫ Cards</button>
-      <button class="vt-btn" id="vTable" onclick="setView('table')">☰ Table</button>
+      <button class="vt-btn" id="vGrid" onclick="setView('grid')">◫ Cards</button>
+      <button class="vt-btn active" id="vTable" onclick="setView('table')">☰ Table</button>
     </div>
   </div>
 </nav>
@@ -388,21 +469,21 @@ tbody tr:hover td{background:var(--accent-glow)}
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-col">
-    <h4>About ScopeDeals</h4>
+    <h4>About AstroCompare</h4>
     <p>We track smart telescope and astrophotography gear prices across major astronomy retailers so you can find the best deals in one place. Our specs come from manufacturer data and are updated regularly. Whether you're a beginner picking your first smart scope or an experienced imager hunting for a deal, we've got you covered.</p>
   </div>
   <div class="footer-col">
     <h4>Quick Links</h4>
     <div class="footer-links">
       <a href="#top">Back to top</a>
-      <a href="mailto:hello@scopedeals.com">Contact us</a>
+      <a href="mailto:zhdr.rz@gmail.com">Contact us</a>
       <a href="#" onclick="document.querySelector('[data-cat=smart-telescope]').click();return false">Smart Telescopes</a>
       <a href="#" onclick="document.querySelector('[data-cat=camera]').click();return false">Astro Cameras</a>
       <a href="#" onclick="document.querySelector('[data-cat=mount]').click();return false">Mounts & Trackers</a>
     </div>
   </div>
   <div class="affiliate-box">
-    <strong>Disclosure:</strong> ScopeDeals is reader-supported. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you. This helps us keep the site running and the price data flowing. We independently curate every product listed — commissions never influence our rankings or featured picks.
+    <strong>Disclosure:</strong> AstroCompare is reader-supported. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you. This helps us keep the site running and the price data flowing. We independently curate every product listed — commissions never influence our rankings or featured picks.
   </div>
 </footer>
 
@@ -426,7 +507,7 @@ products.forEach(p => {
 // ── State
 let activeCat = 'all';
 let dealsOnly = false;
-let viewMode = 'grid';
+let viewMode = 'table';
 let tblSortCol = 'price';
 let tblSortDir = 'asc';
 
@@ -597,6 +678,7 @@ document.querySelectorAll('thead th[data-sort]').forEach(th => {
 
 // ── INIT
 populateBrands();
+setView('table');
 render();
 </script>
 </body>
