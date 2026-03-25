@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroCompare Guides — Smart Telescope & Astrophotography Buying Guides</title>
+<meta name="description" content="Expert buying guides, comparisons, and reviews for smart telescopes and astrophotography gear. Seestar vs DWARF, best telescopes 2026, budget setups, and more.">
+<meta name="keywords" content="smart telescope buying guide, best telescope 2026, astrophotography guide, telescope comparison, seestar review, dwarf telescope review">
+<link rel="canonical" href="https://astrocompare.netlify.app/blog.html">
+<meta property="og:title" content="AstroCompare Guides — Telescope & Astrophotography Buying Guides">
+<meta property="og:description" content="Expert buying guides, comparisons and reviews for smart telescopes and astrophotography gear.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06070d;--bg2:#0c0e18;--bg3:#141726;--bg4:#1c2035;
+  --text:#dfe1ed;--text2:#8e91ab;--text3:#5d6080;
+  --accent:#2d7ff9;--accent2:#74b3ff;
+  --cyan:#00cec9;--orange:#fdcb6e;--green:#55efc4;
+  --border:#1e2140;--border2:#2d3160;
+  --radius:10px;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;min-height:100vh}
+
+/* stars */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 8% 12%, rgba(255,255,255,0.7),transparent),
+    radial-gradient(1px 1px at 20% 55%, rgba(255,255,255,0.5),transparent),
+    radial-gradient(1.5px 1.5px at 35% 20%, rgba(255,255,255,0.8),transparent),
+    radial-gradient(1px 1px at 50% 75%, rgba(255,255,255,0.6),transparent),
+    radial-gradient(1px 1px at 65% 38%, rgba(200,220,255,0.7),transparent),
+    radial-gradient(2px 2px at 78% 10%, rgba(255,255,255,0.9),transparent),
+    radial-gradient(1px 1px at 88% 60%, rgba(255,255,255,0.6),transparent),
+    radial-gradient(1.5px 1.5px at 93% 85%, rgba(255,255,255,0.75),transparent),
+    radial-gradient(1px 1px at 15% 88%, rgba(200,220,255,0.65),transparent),
+    radial-gradient(1px 1px at 42% 45%, rgba(255,255,255,0.55),transparent),
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(45,127,249,0.07),transparent 70%);
+}
+.page{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+.site-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 0;border-bottom:1px solid var(--border);
+  flex-wrap:wrap;gap:.75rem;
+}
+.nav-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-text{font-family:var(--mono);font-weight:700;font-size:1.1rem;color:var(--text)}
+.nav-logo-text span{color:var(--accent2)}
+.nav-links{display:flex;align-items:center;gap:.5rem}
+.nav-link{
+  padding:.4rem .9rem;border-radius:8px;font-size:.82rem;font-weight:500;
+  text-decoration:none;color:var(--text2);border:1px solid transparent;
+  transition:all .15s;
+}
+.nav-link:hover{color:var(--text);background:var(--bg3);border-color:var(--border)}
+.nav-link.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-link.primary:hover{background:#1a6fe0}
+
+/* HERO */
+.blog-hero{padding:3.5rem 0 2.5rem;text-align:center}
+.blog-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:1rem}
+.blog-hero h1 span{color:var(--accent2)}
+.blog-hero p{color:var(--text2);font-size:1.05rem;max-width:560px;margin:0 auto}
+
+/* GRID */
+.articles-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:1.5rem;padding:2rem 0 4rem;
+}
+.article-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  overflow:hidden;text-decoration:none;color:inherit;
+  transition:border-color .2s,transform .2s;display:flex;flex-direction:column;
+}
+.article-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card-badge{
+  padding:1.25rem 1.25rem .75rem;
+}
+.badge-tag{
+  display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:600;
+  padding:.2rem .6rem;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.75rem;
+}
+.tag-comparison{background:rgba(45,127,249,.15);color:var(--accent2)}
+.tag-guide{background:rgba(0,206,201,.15);color:var(--cyan)}
+.tag-budget{background:rgba(253,203,110,.15);color:var(--orange)}
+.article-card h2{font-size:1.15rem;font-weight:600;line-height:1.35;margin-bottom:.5rem}
+.article-card p{font-size:.88rem;color:var(--text2);line-height:1.6;padding:0 1.25rem 1.25rem}
+.card-footer-bar{
+  margin-top:auto;padding:.75rem 1.25rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:.78rem;color:var(--text3);font-family:var(--mono);
+}
+.read-link{color:var(--accent2);font-weight:500}
+
+/* FOOTER */
+.site-footer{
+  border-top:1px solid var(--border);padding:2rem 0;
+  text-align:center;font-size:.8rem;color:var(--text3);font-family:var(--mono);
+}
+.site-footer a{color:var(--text2);text-decoration:none}
+.site-footer a:hover{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 42 42" fill="none">
+      <circle cx="7" cy="7" r="2.5" fill="#74b3ff" opacity="0.9"/>
+      <line x1="10" y1="10" x2="20" y2="18" stroke="#2d7ff9" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6"/>
+      <rect x="17" y="20" width="18" height="8" rx="3" fill="#1c2035" stroke="#2d7ff9" stroke-width="1.5"/>
+      <rect x="33" y="22" width="6" height="4" rx="1.5" fill="#2d7ff9" opacity="0.85"/>
+      <rect x="14" y="21" width="4" height="6" rx="1" fill="#0c0e18" stroke="#74b3ff" stroke-width="1.2"/>
+      <circle cx="16" cy="24" r="1.5" fill="#00cec9" opacity="0.7"/>
+    </svg>
+    <span class="nav-logo-text">Astro<span>Compare</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="/blog.html" class="nav-link" style="color:var(--text);font-weight:600">Guides</a>
+    <a href="/" class="nav-link primary">↗ Compare Prices</a>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <h1>Buying Guides &amp; <span>Gear Comparisons</span></h1>
+  <p>Cut through the noise. Real-world advice on smart telescopes and astrophotography gear — written for beginners and experienced imagers alike.</p>
+</section>
+
+<div class="articles-grid">
+
+  <a href="/seestar-s30-vs-dwarf-3.html" class="article-card">
+    <div class="card-badge">
+      <div class="badge-tag tag-comparison">Comparison</div>
+      <h2>ZWO Seestar S30 vs DwarfLab DWARF 3: Which Should You Buy in 2026?</h2>
+    </div>
+    <p>Two of the most popular smart telescopes under $500, head to head. We compare optics, image quality, portability, and value — with a clear verdict.</p>
+    <div class="card-footer-bar">
+      <span>Seestar S30 · DWARF 3</span>
+      <span class="read-link">Read guide →</span>
+    </div>
+  </a>
+
+  <a href="/best-telescopes-2026.html" class="article-card">
+    <div class="card-badge">
+      <div class="badge-tag tag-guide">2026 Guide</div>
+      <h2>Best Smart Telescopes for Astrophotography in 2026</h2>
+    </div>
+    <p>From beginner-friendly all-in-ones to advanced imaging platforms — our top picks across every budget, with real specs and honest assessments.</p>
+    <div class="card-footer-bar">
+      <span>Beginner · Mid · Advanced</span>
+      <span class="read-link">Read guide →</span>
+    </div>
+  </a>
+
+  <a href="/astrophotography-under-1000.html" class="article-card">
+    <div class="card-badge">
+      <div class="badge-tag tag-budget">Budget Guide</div>
+      <h2>Best Astrophotography Setup Under $1,000 (2026)</h2>
+    </div>
+    <p>You don't need to spend thousands to capture stunning nebulae and galaxies. Here's exactly what to buy — and what to skip — on a $1k budget.</p>
+    <div class="card-footer-bar">
+      <span>Under $1,000</span>
+      <span class="read-link">Read guide →</span>
+    </div>
+  </a>
+
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 <a href="/">AstroCompare</a> · <a href="mailto:zhdr.rz@gmail.com">Contact</a> · Affiliate links earn us a small commission at no cost to you.</p>
+</footer>
+
+</div>
+</body>
+</html>
