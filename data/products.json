@@ -415,7 +415,7 @@
     "weight": "1.2 kg (head)",
     "highlight": "Wi-Fi GoTo, 5kg payload, great beginner EQ tracker",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=Sky-Watcher+Star+Adventurer+GTi&tag=astrocompare-20",
+    "affiliateUrl": "https://www.amazon.com/dp/B0BCCL38JQ?tag=astrocompare-20",
     "asin": "B0BTK959TH",
     "bestValue": true,
     "editorsPick": false
@@ -507,7 +507,7 @@
     "weight": "0.04 kg",
     "highlight": "Ha + OIII dual narrowband, best light pollution filter",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=Optolong+L-eXtreme+Dual+Band+Filter&tag=astrocompare-20",
+    "affiliateUrl": "https://www.amazon.com/dp/B08BWTFZ22?tag=astrocompare-20",
     "asin": "B08YJKLQJY",
     "bestValue": true,
     "editorsPick": false
@@ -530,7 +530,7 @@
     "weight": "0.04 kg",
     "highlight": "Best general-purpose light pollution filter for color cameras",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=Optolong+L-Pro+Broadband+Filter&tag=astrocompare-20",
+    "affiliateUrl": "https://www.amazon.com/dp/B01LN3KFMU?tag=astrocompare-20",
     "asin": "B07KXZRSNG",
     "bestValue": false,
     "editorsPick": false
@@ -577,7 +577,7 @@
     "weight": "0.36 kg",
     "highlight": "Auto-aligns any Celestron GoTo scope, plate solving tech",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=Celestron+StarSense+AutoAlign&tag=astrocompare-20",
+    "affiliateUrl": "https://www.amazon.com/dp/B00EZILDLS?tag=astrocompare-20",
     "asin": "B0BFTM3Y28",
     "bestValue": false,
     "editorsPick": false
@@ -1784,7 +1784,7 @@
     "weight": "1.4 kg",
     "highlight": "Fast f/4.9 Petzval APO, tack-sharp across full-frame, 1.4kg — the gold standard compact widefield scope",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=William+Optics+RedCat+51&tag=astrocompare-20",
+    "affiliateUrl": "https://www.amazon.com/dp/B0CSCNWVL1?tag=astrocompare-20",
     "editorsPick": true
   },
   {
@@ -1905,6 +1905,6 @@
     "weight": "—",
     "highlight": "5nm Ha+OIII dual band, works down to f/3.6, kills light pollution — best-value duo-narrowband filter",
     "retailer": "Amazon",
-    "affiliateUrl": "https://www.amazon.com/s?k=Antlia+ALP-T+dual+band+Ha+OIII+filter&tag=astrocompare-20"
+    "affiliateUrl": "https://www.amazon.com/dp/B09MPZ2NBM?tag=astrocompare-20"
   }
 ]
