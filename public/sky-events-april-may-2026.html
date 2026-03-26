@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronomy Events to Watch in April &amp; May 2026 — AstroCompare</title>
+<meta name="description" content="The best astronomy events of April and May 2026 — meteor showers, planetary conjunctions, the Lyrid and Eta Aquariid peaks, and what to image with your smart telescope.">
+<meta name="keywords" content="astronomy events April 2026, astronomy events May 2026, Lyrid meteor shower 2026, Eta Aquariid 2026, planetary conjunction April 2026, night sky April May 2026, what to see in the sky 2026">
+<link rel="canonical" href="https://astrocompare.netlify.app/sky-events-april-may-2026.html">
+<meta property="og:title" content="Best Astronomy Events: April &amp; May 2026">
+<meta property="og:description" content="Meteor showers, conjunctions, planetary parades, and deep-sky highlights — everything to look forward to in April and May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06070d;--bg2:#0c0e18;--bg3:#141726;--bg4:#1c2035;
+  --text:#dfe1ed;--text2:#8e91ab;--text3:#5d6080;
+  --accent:#2d7ff9;--accent2:#74b3ff;
+  --cyan:#00cec9;--orange:#fdcb6e;--green:#55efc4;--red:#fd7979;--purple:#a29bfe;
+  --border:#1e2140;--border2:#2d3160;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.8),transparent),
+    radial-gradient(1px 1px at 22% 35%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1.5px 1.5px at 35% 8%,rgba(255,255,255,.9),transparent),
+    radial-gradient(1px 1px at 50% 70%,rgba(200,220,255,.7),transparent),
+    radial-gradient(2px 2px at 62% 20%,rgba(255,255,255,.85),transparent),
+    radial-gradient(1px 1px at 75% 55%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1.5px 1.5px at 88% 10%,rgba(255,240,200,.8),transparent),
+    radial-gradient(1px 1px at 94% 80%,rgba(255,255,255,.65),transparent),
+    radial-gradient(1px 1px at 15% 90%,rgba(200,220,255,.7),transparent),
+    radial-gradient(1px 1px at 43% 48%,rgba(255,255,255,.55),transparent),
+    radial-gradient(ellipse 90% 45% at 50% 0%,rgba(45,127,249,.08),transparent 70%)}
+.page{position:relative;z-index:1}
+.site-nav{max-width:1100px;margin:0 auto;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-text{font-family:var(--mono);font-weight:700;font-size:1.1rem;color:var(--text)}
+.nav-logo-text span{color:var(--accent2)}
+.nav-links{display:flex;align-items:center;gap:.5rem}
+.nav-link{padding:.4rem .9rem;border-radius:8px;font-size:.82rem;font-weight:500;text-decoration:none;color:var(--text2);border:1px solid transparent;transition:all .15s}
+.nav-link:hover{color:var(--text);background:var(--bg3);border-color:var(--border)}
+.nav-link.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-link.primary:hover{background:#1a6fe0}
+.article-wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.breadcrumb{font-size:.78rem;color:var(--text3);font-family:var(--mono);margin-bottom:1.5rem}
+.breadcrumb a{color:var(--text2);text-decoration:none}
+.article-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:600;padding:.2rem .6rem;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.85rem;background:rgba(162,155,254,.15);color:var(--purple)}
+h1.article-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:1rem}
+.article-meta{font-size:.82rem;color:var(--text3);font-family:var(--mono);margin-bottom:2rem}
+.article-wrap h2{font-size:1.35rem;font-weight:600;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.article-wrap p{margin-bottom:1rem;color:var(--text2);font-size:.97rem;line-height:1.75}
+.article-wrap p strong{color:var(--text)}
+
+/* Month header */
+.month-header{
+  background:linear-gradient(135deg,rgba(45,127,249,.1),rgba(0,206,201,.06));
+  border:1px solid var(--border2);border-radius:12px;
+  padding:1rem 1.25rem;margin:2rem 0 1.25rem;
+  display:flex;align-items:center;gap:.85rem;
+}
+.month-icon{font-size:1.75rem;line-height:1}
+.month-label{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--accent2)}
+.month-sub{font-size:.82rem;color:var(--text2)}
+
+/* Event cards */
+.event-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:1.25rem 1.4rem;margin-bottom:1rem;
+  border-left:3px solid var(--border2);
+}
+.event-card.meteor{border-left-color:var(--orange)}
+.event-card.planet{border-left-color:var(--accent2)}
+.event-card.moon{border-left-color:var(--purple)}
+.event-card.eclipse{border-left-color:var(--red)}
+.event-card.deepsky{border-left-color:var(--green)}
+.event-date{
+  font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.5px;
+  text-transform:uppercase;margin-bottom:.35rem;
+}
+.event-card.meteor .event-date{color:var(--orange)}
+.event-card.planet .event-date{color:var(--accent2)}
+.event-card.moon .event-date{color:var(--purple)}
+.event-card.eclipse .event-date{color:var(--red)}
+.event-card.deepsky .event-date{color:var(--green)}
+.event-title{font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.event-card p{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:.65rem}
+.event-card p:last-child{margin-bottom:0}
+.visibility-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.vis-tag{
+  font-family:var(--mono);font-size:.68rem;padding:.15rem .55rem;border-radius:4px;
+  background:var(--bg3);border:1px solid var(--border);color:var(--text2);
+}
+.vis-tag.north{border-color:rgba(116,179,255,.3);color:var(--accent2)}
+.vis-tag.south{border-color:rgba(85,239,196,.3);color:var(--green)}
+.vis-tag.global{border-color:rgba(253,203,110,.3);color:var(--orange)}
+.vis-tag.europe{border-color:rgba(162,155,254,.3);color:var(--purple)}
+.vis-tag.poor{border-color:rgba(253,121,121,.3);color:var(--red)}
+
+/* Rate bars */
+.rate-row{display:flex;align-items:center;gap:.75rem;margin:.5rem 0;font-size:.85rem}
+.rate-label{color:var(--text2);min-width:80px;font-size:.82rem}
+.rate-bar-wrap{flex:1;background:var(--bg3);border-radius:4px;height:8px;overflow:hidden}
+.rate-bar{height:100%;border-radius:4px}
+.rate-bar.high{background:var(--green)}
+.rate-bar.mid{background:var(--orange)}
+.rate-bar.low{background:var(--red)}
+.rate-num{font-family:var(--mono);font-size:.78rem;color:var(--text);white-space:nowrap}
+
+/* Planning tip */
+.tip-box{background:rgba(0,206,201,.07);border:1px solid rgba(0,206,201,.2);border-radius:10px;padding:1rem 1.2rem;margin:1.25rem 0}
+.tip-box strong{color:var(--cyan);font-size:.78rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:.4rem}
+.tip-box p{font-size:.88rem;color:var(--text2);margin:0}
+
+/* Alert box */
+.alert-box{background:rgba(45,127,249,.08);border:1px solid rgba(45,127,249,.25);border-radius:10px;padding:1rem 1.2rem;margin:1.25rem 0}
+.alert-box strong{color:var(--accent2);font-size:.78rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:.4rem}
+.alert-box p{font-size:.88rem;color:var(--text2);margin:0}
+
+/* CTA */
+.cta-banner{background:linear-gradient(135deg,rgba(45,127,249,.12),rgba(0,206,201,.08));border:1px solid var(--accent);border-radius:12px;padding:1.5rem;margin:2.5rem 0;text-align:center}
+.cta-banner h3{font-size:1.1rem;margin-bottom:.5rem}
+.cta-banner p{font-size:.88rem;color:var(--text2);margin-bottom:1rem}
+.cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.cta-btn{padding:.6rem 1.3rem;border-radius:8px;font-weight:600;font-size:.85rem;text-decoration:none;transition:all .15s}
+.cta-btn.primary{background:var(--accent);color:#fff}
+.cta-btn.primary:hover{background:#1a6fe0}
+.cta-btn.secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.cta-btn.secondary:hover{border-color:var(--accent2)}
+.site-footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;font-size:.78rem;color:var(--text3);font-family:var(--mono);max-width:1100px;margin:0 auto}
+.site-footer a{color:var(--text2);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="site-nav">
+  <a href="/" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 42 42" fill="none">
+      <circle cx="7" cy="7" r="2.5" fill="#74b3ff" opacity="0.9"/>
+      <line x1="10" y1="10" x2="20" y2="18" stroke="#2d7ff9" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6"/>
+      <rect x="17" y="20" width="18" height="8" rx="3" fill="#1c2035" stroke="#2d7ff9" stroke-width="1.5"/>
+      <rect x="33" y="22" width="6" height="4" rx="1.5" fill="#2d7ff9" opacity="0.85"/>
+      <rect x="14" y="21" width="4" height="6" rx="1" fill="#0c0e18" stroke="#74b3ff" stroke-width="1.2"/>
+      <circle cx="16" cy="24" r="1.5" fill="#00cec9" opacity="0.7"/>
+    </svg>
+    <span class="nav-logo-text">Astro<span>Compare</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="/blog.html" class="nav-link">← Guides</a>
+    <a href="/" class="nav-link primary">↗ Compare Prices</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <div class="breadcrumb"><a href="/">Home</a> / <a href="/blog.html">Guides</a> / Sky Events April–May 2026</div>
+  <div class="article-tag">Sky Events</div>
+  <h1 class="article-title">Astronomy Events to Watch in April &amp; May 2026</h1>
+  <div class="article-meta">Updated March 2026 · 7 min read · Events worldwide</div>
+
+  <p>April and May 2026 pack in a strong mix of planetary action, two meteor shower peaks, and a rare tight planetary conjunction — all before the year's biggest event, the August 12 total solar eclipse. Here's everything worth clearing your schedule for, with regional visibility notes for each.</p>
+
+  <!-- ═══════════════ APRIL ═══════════════ -->
+  <div class="month-header">
+    <div class="month-icon">🌸</div>
+    <div>
+      <div class="month-label">April 2026</div>
+      <div class="month-sub">Planetary parade · Lyrids · Pink Moon</div>
+    </div>
+  </div>
+
+  <div class="event-card moon">
+    <div class="event-date">April 2 — Full Moon</div>
+    <div class="event-title">Pink Moon — April Full Moon</div>
+    <p>April's full moon rises at sunset and sets at sunrise, riding high in the sky. Known as the Pink Moon — not for its colour, but after the wild ground phlox that blooms in early spring in North America. A bright full moon washes out faint deep-sky targets, so use the nights around April 2 for bright showpieces: the Moon itself, planets, and lunar craters are spectacular through a telescope.</p>
+    <div class="visibility-tags"><span class="vis-tag global">🌍 Worldwide</span></div>
+  </div>
+
+  <div class="event-card planet">
+    <div class="event-date">April 3 — Mercury at Greatest Western Elongation</div>
+    <div class="event-title">Best Morning View of Mercury in 2026</div>
+    <p>Mercury reaches its greatest western elongation of <strong>27.8° from the Sun</strong> — the best position of 2026 for morning observers. Look east in the hour before sunrise. Mercury will be highest above the horizon around this date, rising well before the Sun. It shines at approximately magnitude –0.1, making it easily visible to the naked eye as a bright "star" low in the pre-dawn sky.</p>
+    <p><strong>Best viewing:</strong> Face east 45–60 minutes before local sunrise. Mercury is notoriously hard to spot — binoculars help significantly. The planet will be in Pisces/Aries and should stand out clearly once you know where to look.</p>
+    <div class="visibility-tags">
+      <span class="vis-tag global">🌍 Worldwide</span>
+      <span class="vis-tag north">Northern Hemisphere favoured</span>
+    </div>
+  </div>
+
+  <div class="event-card planet">
+    <div class="event-date">April 19–20 — Planetary Parade</div>
+    <div class="event-title">Mercury, Mars &amp; Saturn Close Together in the Morning Sky</div>
+    <p>This is the standout event of April. Mercury, Mars, and Saturn converge in a tight grouping in the pre-dawn eastern sky, with Neptune nearby for those with binoculars or a small scope. Two especially close pairings unfold on consecutive mornings:</p>
+    <p><strong>April 19 — Mars &amp; Saturn conjunction:</strong> The two planets pass within <strong>3°21'</strong> of each other — close enough to share the same binocular field of view. Mars glows reddish at magnitude 1.2, Saturn a steadier yellow-white at magnitude 0.9.</p>
+    <p><strong>April 20 — Mercury &amp; Saturn conjunction:</strong> An even tighter pairing — Mercury passes just <strong>0°27'</strong> from Saturn. That's less than the width of the full Moon. Both planets will be visible to the naked eye and are a stunning pair through binoculars or a widefield telescope. Look east about 45 minutes before sunrise.</p>
+    <div class="visibility-tags">
+      <span class="vis-tag global">🌍 Worldwide</span>
+      <span class="vis-tag north">Best: Northern Hemisphere</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>📸 Imaging tip — April planetary parade</strong>
+    <p>This is a perfect opportunity for a widefield photo. Set up a camera on a tripod before dawn and frame the eastern horizon. A 35–50mm lens works well. A smart telescope like the Seestar S30 Pro's wide-field mode can capture all three planets in a single frame and will track them automatically.</p>
+  </div>
+
+  <div class="event-card meteor">
+    <div class="event-date">April 22–23 — Peak Night</div>
+    <div class="event-title">Lyrid Meteor Shower 2026 — Good Conditions</div>
+    <p>The Lyrids are one of the oldest known meteor showers (observed for over 2,700 years) and reliably produce <strong>15–20 meteors per hour</strong> at peak, with occasional bright fireballs. In 2026, conditions are favourable — the Moon is a waxing crescent and sets well before peak activity in the early morning hours, leaving dark skies for the best part of the show.</p>
+    <p>The radiant rises in the northeast after 10 PM and is highest around 4–5 AM. Meteors radiate from near the bright star Vega in Lyra. No equipment needed — just lie back on a reclining chair and scan the whole sky.</p>
+    <div class="rate-row">
+      <span class="rate-label">Northern</span>
+      <div class="rate-bar-wrap"><div class="rate-bar high" style="width:75%"></div></div>
+      <span class="rate-num">~20/hr</span>
+    </div>
+    <div class="rate-row">
+      <span class="rate-label">Southern</span>
+      <div class="rate-bar-wrap"><div class="rate-bar low" style="width:25%"></div></div>
+      <span class="rate-num">~5/hr</span>
+    </div>
+    <div class="visibility-tags">
+      <span class="vis-tag north">Northern Hemisphere — best</span>
+      <span class="vis-tag south">Southern Hemisphere — limited</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MAY ═══════════════ -->
+  <div class="month-header">
+    <div class="month-icon">🌺</div>
+    <div>
+      <div class="month-label">May 2026</div>
+      <div class="month-sub">Eta Aquariids · Moon-Antares occultation · Blue Moon</div>
+    </div>
+  </div>
+
+  <div class="event-card moon">
+    <div class="event-date">May 4–5 — Evening/Night</div>
+    <div class="event-title">Moon Occults Antares — Rare Stellar Eclipse</div>
+    <p>The <strong>94%-illuminated Moon</strong> passes directly in front of Antares — the bright red supergiant heart of Scorpius — occulting it from view for observers in a specific band. A lunar occultation of a bright star is an unforgettable sight: through a telescope you can watch the star blink out almost instantly as the Moon's limb crosses it, then reappear on the other side minutes later.</p>
+    <p>The occultation is visible from <strong>Antarctica, Argentina, Chile, and Bolivia</strong>. From elsewhere in the Southern Hemisphere and southern parts of North America, the Moon and Antares pass very close together (within 0°26') — a striking naked-eye conjunction even without the occultation.</p>
+    <div class="visibility-tags">
+      <span class="vis-tag south">Occultation: Argentina, Chile, Bolivia, Antarctica</span>
+      <span class="vis-tag global">Close conjunction: worldwide</span>
+    </div>
+  </div>
+
+  <div class="event-card meteor">
+    <div class="event-date">May 5–6 — Peak Night</div>
+    <div class="event-title">Eta Aquariid Meteor Shower 2026 — Moon Interference</div>
+    <p>The Eta Aquariids are debris from <strong>Halley's Comet</strong> — one of the most prolific meteor showers of the year for Southern Hemisphere observers. At peak, the Southern Hemisphere can see <strong>50–60 meteors per hour</strong> under ideal conditions. Northern Hemisphere observers are limited to around 10–30 per hour since the radiant stays low above the horizon.</p>
+    <p>Unfortunately, 2026 conditions are <strong>challenging</strong>. The Moon will be approximately 82% illuminated (waning gibbous) and rises around 1 AM, flooding the pre-dawn sky with light during the best viewing window. You'll still see the brightest meteors — fast, long-trailed Halley meteors are hard to miss — but faint ones will be washed out. The shower is active from late April to late May, so try the nights around May 3–4 when the Moon rises later.</p>
+    <div class="rate-row">
+      <span class="rate-label">Southern</span>
+      <div class="rate-bar-wrap"><div class="rate-bar high" style="width:80%"></div></div>
+      <span class="rate-num">50–60/hr</span>
+    </div>
+    <div class="rate-row">
+      <span class="rate-label">Northern</span>
+      <div class="rate-bar-wrap"><div class="rate-bar mid" style="width:35%"></div></div>
+      <span class="rate-num">10–30/hr</span>
+    </div>
+    <div class="visibility-tags">
+      <span class="vis-tag south">Southern Hemisphere — best</span>
+      <span class="vis-tag north">Northern Hemisphere — reduced</span>
+      <span class="vis-tag poor">⚠️ Moon interference this year</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>🌙 Beating the Moon — Eta Aquariids tip</strong>
+    <p>The radiant rises in the east about 3–4 hours before sunrise. Try observing between 2–3 AM before moonrise, then again in the twilight before dawn when your eyes are dark-adapted. Face east and look about 45° away from the radiant for the best long-trailed meteors.</p>
+  </div>
+
+  <div class="event-card planet">
+    <div class="event-date">May — All Month</div>
+    <div class="event-title">Jupiter in Gemini — Evening Showpiece</div>
+    <p>Jupiter remains a dominant presence in the evening sky through spring 2026, shining brilliantly in <strong>Gemini</strong> at around magnitude –2.1. It's well-placed for observation in the early evening, setting a few hours after midnight. Through any telescope — including smart scopes — you'll clearly see the four Galilean moons (Io, Europa, Ganymede, Callisto) and the main cloud bands. Jupiter is one of the best targets for any skill level and any equipment.</p>
+    <div class="visibility-tags"><span class="vis-tag global">🌍 Worldwide — early evening sky</span></div>
+  </div>
+
+  <div class="event-card moon">
+    <div class="event-date">May 31 — Full Moon</div>
+    <div class="event-title">Blue Moon — Second Full Moon of May</div>
+    <p>May 2026 has two full moons — the first on May 1, and the second on May 31. The second full moon in a calendar month is traditionally called a <strong>"Blue Moon"</strong> (it won't actually appear blue unless there's smoke or ash in the atmosphere). Blue Moons occur roughly every 2–3 years. While it's a cultural curiosity rather than an astronomical event, it's a great excuse to photograph the full moon rising over your local landscape.</p>
+    <div class="visibility-tags"><span class="vis-tag global">🌍 Worldwide</span></div>
+  </div>
+
+  <!-- ═══════════════ LOOKING AHEAD ═══════════════ -->
+  <h2>Already Planning Ahead: August 12 — Total Solar Eclipse 🌑</h2>
+
+  <div class="alert-box">
+    <strong>📅 Mark your calendar now</strong>
+    <p>The <strong>August 12, 2026 total solar eclipse</strong> is already generating huge excitement. Totality sweeps across <strong>Russia, Greenland, Iceland, and Spain</strong> — the first total eclipse visible from mainland Europe since 1999. Maximum totality lasts 2 minutes 18 seconds. Partial phases will be visible across much of Western Europe and the northeastern United States. Travel packages to the path of totality are already selling out.</p>
+  </div>
+
+  <p>The path of totality crosses northern Spain (with Palma de Mallorca and Valencia seeing impressive totality), Iceland, and southern Greenland. If you're in Western Europe, now is the time to book accommodation along the path — or start planning a dedicated eclipse trip.</p>
+
+  <!-- ═══════════════ DEEP-SKY SEASON ═══════════════ -->
+  <h2>What to Image in April &amp; May 2026</h2>
+
+  <div class="event-card deepsky">
+    <div class="event-date">Spring Deep-Sky Season</div>
+    <div class="event-title">Galaxy Season — Best Months of the Year for Galaxies</div>
+    <p>April and May are the heart of <strong>galaxy season</strong>. The Virgo Galaxy Cluster dominates the southern sky, placing dozens of galaxies within a single binocular field. Highlights include:</p>
+    <p><strong>Virgo Cluster</strong> — M87 (with its famous black hole jet), M84, M86, M89, and the whole Markarian's Chain of galaxies stretching across several degrees. <strong>Whirlpool Galaxy (M51)</strong> — the classic interacting galaxy pair in Canes Venatici, perfectly placed high in the sky. <strong>Sombrero Galaxy (M104)</strong> — a stunning edge-on galaxy with a dramatic dust lane, high in Virgo. <strong>Leo Triplet (M65, M66, NGC 3628)</strong> — three galaxies in a single field, a favourite widefield target.</p>
+    <div class="visibility-tags">
+      <span class="vis-tag global">🌍 Northern Hemisphere best · visible globally</span>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <h3>Find the right gear for these events</h3>
+    <p>Whether you're capturing the Lyrid fireball season, galaxy season, or the planetary parade — AstroCompare helps you find the best scope and camera at the best price.</p>
+    <div class="cta-row">
+      <a href="/" class="cta-btn primary">Browse Smart Telescopes</a>
+      <a href="/best-telescopes-2026.html" class="cta-btn secondary">Best Telescope Guide</a>
+    </div>
+  </div>
+
+  <p style="font-size:.78rem;color:var(--text3);margin-top:1rem">Event data sourced from EarthSky, Space.com, NASA, and the American Meteor Society. Times given are approximate — check your local planetarium app for precise times at your location.</p>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 <a href="/">AstroCompare</a> · <a href="/blog.html">Guides</a> · <a href="mailto:zhdr.rz@gmail.com">Contact</a></p>
+</footer>
+</div>
+</body>
+</html>
