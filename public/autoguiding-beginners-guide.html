@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoguiding for Beginners: How to Get Round Stars Every Time | AstroCompare</title>
+<meta name="description" content="Confused about autoguiding? Here's everything you need to know: guide cameras, guide scopes, PHD2, off-axis guiders, and how to finally get round stars in every frame.">
+<meta name="keywords" content="autoguiding astrophotography beginners, PHD2 tutorial, guide camera astrophotography, off-axis guider vs guide scope, round stars astrophotography, autoguiding setup guide">
+<link rel="canonical" href="https://astrocompare.netlify.app/autoguiding-beginners-guide.html">
+<meta property="og:title" content="Autoguiding for Beginners: How to Get Round Stars Every Time">
+<meta property="og:description" content="PHD2, guide cameras, guide scopes, off-axis guiders — a complete beginner guide to autoguiding in astrophotography.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06070d;--bg2:#0c0e18;--bg3:#141726;--bg4:#1c2035;
+  --text:#dfe1ed;--text2:#8e91ab;--text3:#5d6080;
+  --accent:#2d7ff9;--accent2:#74b3ff;
+  --cyan:#00cec9;--orange:#fdcb6e;--green:#55efc4;--red:#fd7979;
+  --border:#1e2140;--border2:#2d3160;
+  --radius:10px;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;min-height:100vh}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1px 1px at 20% 55%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.5px 1.5px at 35% 20%,rgba(255,255,255,.8),transparent),
+    radial-gradient(1px 1px at 50% 75%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 65% 38%,rgba(200,220,255,.7),transparent),
+    radial-gradient(2px 2px at 78% 10%,rgba(255,255,255,.9),transparent),
+    radial-gradient(ellipse 80% 40% at 50% 0%,rgba(45,127,249,.07),transparent 70%);
+}
+.page{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 1.5rem}
+
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-text{font-family:var(--mono);font-weight:700;font-size:2.2rem;color:var(--text)}
+.nav-logo-text span{color:var(--accent2)}
+.nav-links{display:flex;align-items:center;gap:.5rem}
+.nav-link{padding:.4rem .9rem;border-radius:8px;font-size:.82rem;font-weight:500;text-decoration:none;color:var(--text2);border:1px solid transparent;transition:all .15s}
+.nav-link:hover{color:var(--text);background:var(--bg3);border-color:var(--border)}
+.nav-link.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-link.primary:hover{background:#1a6fe0}
+
+.article-header{padding:3rem 0 2rem}
+.article-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:600;padding:.2rem .6rem;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:1rem;background:rgba(85,239,196,.15);color:var(--green)}
+.article-header h1{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:1rem}
+.article-header h1 span{color:var(--accent2)}
+.article-meta{font-family:var(--mono);font-size:.75rem;color:var(--text3);display:flex;gap:1.5rem;flex-wrap:wrap}
+
+.article-body{padding-bottom:4rem}
+.article-body h2{font-size:1.35rem;font-weight:700;margin:2.5rem 0 .75rem;color:var(--text)}
+.article-body h3{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .5rem;color:var(--accent2)}
+.article-body p{color:var(--text2);margin-bottom:1.1rem;font-size:.97rem}
+.article-body p strong{color:var(--text);font-weight:600}
+.article-body ul,
+.article-body ol{color:var(--text2);margin:0 0 1.1rem 1.5rem;font-size:.97rem}
+.article-body li{margin-bottom:.5rem}
+
+.callout{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.25rem;margin:1.5rem 0}
+.callout.green{border-left-color:var(--green)}
+.callout.orange{border-left-color:var(--orange)}
+.callout.red{border-left-color:var(--red)}
+.callout p{margin:0;font-size:.92rem}
+.callout strong{color:var(--text)}
+
+.flow-steps{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0}
+.flow-step{display:flex;gap:1rem;align-items:flex-start;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
+.step-num{background:var(--accent);color:#fff;font-family:var(--mono);font-size:.75rem;font-weight:700;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-content h4{font-size:.92rem;font-weight:600;margin-bottom:.25rem}
+.step-content p{color:var(--text2);font-size:.86rem;margin:0}
+
+.gear-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.87rem}
+.gear-table th{background:var(--bg3);color:var(--text);padding:.6rem .9rem;text-align:left;border:1px solid var(--border);font-family:var(--mono);font-size:.72rem;text-transform:uppercase}
+.gear-table td{padding:.6rem .9rem;border:1px solid var(--border);color:var(--text2);vertical-align:top}
+.gear-table tr:nth-child(even) td{background:var(--bg2)}
+.tag-rec{color:var(--green);font-weight:600;font-size:.78rem}
+.tag-mid{color:var(--orange);font-weight:600;font-size:.78rem}
+.tag-adv{color:var(--accent2);font-weight:600;font-size:.78rem}
+
+.buy-box{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.5rem;margin:1.25rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.buy-box-info h4{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.buy-box-info p{font-size:.82rem;color:var(--text2);margin:0}
+.buy-box-price{font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--cyan)}
+.buy-btn{background:var(--accent);color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .15s}
+.buy-btn:hover{background:#1a6fe0}
+
+.verdict-box{background:linear-gradient(135deg,rgba(45,127,249,.08),rgba(0,206,201,.05));border:1px solid rgba(45,127,249,.25);border-radius:14px;padding:1.5rem;margin:2rem 0}
+.verdict-box h3{color:var(--accent2);font-size:1.05rem;margin-bottom:.75rem}
+.verdict-box p{color:var(--text2);font-size:.93rem;margin:0 0 .6rem}
+.verdict-box p:last-child{margin:0}
+
+.site-footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;font-size:.8rem;color:var(--text3);font-family:var(--mono)}
+.site-footer a{color:var(--text2);text-decoration:none}
+.site-footer a:hover{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">
+    <svg width="56" height="56" viewBox="0 0 42 42" fill="none">
+      <circle cx="7" cy="7" r="2.5" fill="#74b3ff" opacity="0.9"/>
+      <line x1="10" y1="10" x2="20" y2="18" stroke="#2d7ff9" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6"/>
+      <rect x="17" y="20" width="18" height="8" rx="3" fill="#1c2035" stroke="#2d7ff9" stroke-width="1.5"/>
+      <rect x="33" y="22" width="6" height="4" rx="1.5" fill="#2d7ff9" opacity="0.85"/>
+      <rect x="14" y="21" width="4" height="6" rx="1" fill="#0c0e18" stroke="#74b3ff" stroke-width="1.2"/>
+      <circle cx="16" cy="24" r="1.5" fill="#00cec9" opacity="0.7"/>
+    </svg>
+    <span class="nav-logo-text">Astro<span>Compare</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="/blog.html" class="nav-link">← Guides</a>
+    <a href="/" class="nav-link primary">↗ Compare Prices</a>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="article-tag">Technical Guide</div>
+  <h1>Autoguiding for Beginners: <span>How to Get Round Stars Every Time</span></h1>
+  <div class="article-meta">
+    <span>March 2026</span>
+    <span>12 min read</span>
+    <span>One of the most-asked topics on r/askastrophotography</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>If you've been in r/askastrophotography for more than five minutes, you've seen it: someone posts an image of beautiful nebula detail ruined by elongated, comma-shaped stars. "Help, my stars are trailed." The answer, almost always, is that they need autoguiding. But what is autoguiding, how does it work, and what gear do you actually need? This guide answers all of it.</p>
+
+  <h2>Why Do Stars Trail Without Guiding?</h2>
+
+  <p>Deep-sky astrophotography requires long exposures — often 3–10 minutes per frame. During that time, your equatorial mount tracks the rotation of the Earth, keeping your target centred. But no mount is perfect. All gear-drive mounts have a small rhythmic drift called <strong>periodic error</strong>, caused by tiny imperfections in the drive gears. Even a well-polar-aligned mount drifts slightly over a 5-minute exposure. The result is star trails instead of round pinpoints.</p>
+
+  <p>Autoguiding solves this by constantly measuring the position of a guide star and sending micro-corrections to the mount every 1–2 seconds — nudging the mount back to where it should be before drift accumulates into a visible trail.</p>
+
+  <h2>The Three Components of an Autoguiding System</h2>
+
+  <h3>1. The Guide Camera</h3>
+  <p>A dedicated astronomy camera (typically a small, uncooled CMOS sensor) points at a guide star and reports its position to the guiding software. It doesn't need to produce beautiful images — it just needs to reliably locate star positions to sub-pixel accuracy at high frame rates. Popular budget choices include the ZWO ASI290MM Mini and the ASI220MM Mini. For beginners, the ASI290MM Mini is the classic recommendation.</p>
+
+  <h3>2. The Guide Scope (or Off-Axis Guider)</h3>
+  <p>The guide camera needs to look at a star. You have two options for how to point it:</p>
+
+  <ul>
+    <li><strong>Guide scope:</strong> A small, cheap telescope (typically 50–60mm, f/4) mounted piggyback on your main imaging telescope. Simple, affordable, compatible with almost any setup. The downside is that the guide scope and imaging scope are mechanically separate — they can flex relative to each other (called differential flexure), which can cause star shapes to drift despite good guiding.</li>
+    <li><strong>Off-axis guider (OAG):</strong> Uses a small prism to pick off a sliver of the light cone inside your imaging telescope's optical train — right before it hits the imaging camera. The guide camera is guiding through the exact same optical path as your imaging camera. This eliminates differential flexure entirely. The downside is that it's harder to find a guide star, because you're working with a tiny patch of sky.</li>
+  </ul>
+
+  <div class="callout orange">
+    <p><strong>Guide scope vs. OAG:</strong> Start with a guide scope. It's simpler, cheaper, and works well at shorter focal lengths (&lt;600mm). If you're imaging at 800mm+ and getting soft stars despite good guiding numbers, differential flexure from the guide scope may be the culprit — that's when an OAG makes sense.</p>
+  </div>
+
+  <h3>3. The Guiding Software</h3>
+  <p><strong>PHD2</strong> (Push Here Dummy 2) is the industry standard. It's free, open-source, and works with virtually every guide camera and mount. PHD2 captures guide frames, identifies a guide star, measures its drift, calculates correction pulses, and sends them to the mount — all automatically. Your only job is to calibrate it once at the start of the session and let it run.</p>
+
+  <p>PHD2 is also where you diagnose problems. The graphing window shows your guide error in real time — flat lines mean great guiding, large oscillations mean something's wrong (typically poor polar alignment, mechanical issues, or wind).</p>
+
+  <h2>The Complete Beginner Autoguiding Setup</h2>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Polar align your mount</h4>
+        <p>Autoguiding cannot compensate for poor polar alignment — it can only correct small periodic errors. Do a proper 3-star polar alignment or use a polar alignment app. PHD2's Polar Drift Alignment assistant can also help you nail this.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Mount the guide scope and camera</h4>
+        <p>Attach your guide scope (e.g. a 50mm f/4 mini guidescope) piggyback on your main OTA using guide scope rings. Connect your guide camera. Point the guide scope roughly parallel to the main scope — it doesn't need to be perfectly aligned.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Connect PHD2 and select equipment</h4>
+        <p>Open PHD2, select your guide camera from the camera menu, and your mount from the mount menu. For mounts without direct PC connection, use an INDI or ASCOM driver, or connect via ASIAIR if you're in the ZWO ecosystem.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Select a guide star and calibrate</h4>
+        <p>Click "Loop" to start the guide camera, then click on a medium-brightness star (not saturated, not too dim). Click "Guide" — PHD2 will auto-calibrate by nudging the mount and measuring the star's movement, then begin sending corrections.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Monitor and adjust</h4>
+        <p>Watch the graph. Total RMS error under 1 arcsecond is excellent, 1–2" is good, above 2" may cause visible trailing at long focal lengths. If your error is high, check polar alignment first, then check for cable snag or wind.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Recommended Gear: Guide Cameras</h2>
+
+  <table class="gear-table">
+    <thead>
+      <tr><th>Camera</th><th>Sensor</th><th>Price</th><th>Level</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ASI220MM Mini</strong></td>
+        <td>IMX220, 1.2MP</td>
+        <td>~$89</td>
+        <td class="tag-rec">Beginner ✓</td>
+        <td>Ultra-compact, USB-powered, great for small guide scopes</td>
+      </tr>
+      <tr>
+        <td><strong>ASI290MM Mini</strong></td>
+        <td>IMX290, 2.1MP</td>
+        <td>~$169</td>
+        <td class="tag-rec">Best all-round ✓</td>
+        <td>The most recommended guide cam on Reddit; excellent sensitivity</td>
+      </tr>
+      <tr>
+        <td><strong>ASI174MM Mini</strong></td>
+        <td>IMX174, 2.35MP</td>
+        <td>~$219</td>
+        <td class="tag-mid">Intermediate</td>
+        <td>Larger pixel size — better for OAG use where field is limited</td>
+      </tr>
+      <tr>
+        <td><strong>ASI678MC</strong></td>
+        <td>IMX678, 8.3MP</td>
+        <td>~$149</td>
+        <td class="tag-mid">Dual-use</td>
+        <td>Can double as a planetary/deep-sky camera and guide cam</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Guide Scope vs. Off-Axis Guider: When to Upgrade</h2>
+
+  <p>The guide scope approach works well up to about 600–700mm focal length. Beyond that, differential flexure — the slight mechanical shift between guide scope and imaging scope — becomes the limiting factor. Symptoms include your guiding numbers looking fine but stars still elongating in random directions between frames.</p>
+
+  <p>The <strong>ZWO OAG-L</strong> is the most commonly recommended off-axis guider for ZWO camera users. It slots between your focuser and camera, adding minimal back-focus distance. It comes with a pick-off prism that captures a sliver of light from outside your image circle. Pair it with a small, sensitive guide camera like the ASI290MM Mini.</p>
+
+  <div class="buy-box">
+    <div class="buy-box-info">
+      <h4>ZWO ASI290MM Mini — Best Beginner Guide Camera</h4>
+      <p>IMX290 · 1.2MP · ultra-sensitive · USB-C powered</p>
+    </div>
+    <div class="buy-box-price">~$169</div>
+    <a href="https://www.amazon.com/s?k=ZWO+ASI290MM+Mini+guide+camera&tag=astrocompare-20" class="buy-btn" target="_blank" rel="noopener">View on Amazon ↗</a>
+  </div>
+
+  <div class="buy-box">
+    <div class="buy-box-info">
+      <h4>ZWO OAG-L — Off-Axis Guider</h4>
+      <p>Eliminates differential flexure · ZWO camera compatible</p>
+    </div>
+    <div class="buy-box-price">~$149</div>
+    <a href="https://www.amazon.com/s?k=ZWO+OAG-L+off+axis+guider&tag=astrocompare-20" class="buy-btn" target="_blank" rel="noopener">View on Amazon ↗</a>
+  </div>
+
+  <h2>Common Autoguiding Problems (and Fixes)</h2>
+
+  <ul>
+    <li><strong>Star trails despite guiding:</strong> Usually poor polar alignment. Redo your polar alignment using PHD2's Polar Drift Alignment tool.</li>
+    <li><strong>Guide star jumping around wildly:</strong> Cable snag — a USB or power cable pulling on the telescope. Tape cables down so they don't drag.</li>
+    <li><strong>Guiding works then falls apart mid-session:</strong> The guide star has drifted to the edge of the sensor as the sky rotates. Re-select a more central guide star.</li>
+    <li><strong>Can't find a guide star:</strong> Try increasing exposure time in PHD2, or rotate the guide camera to find a brighter star in the field. If using OAG, rotate the prism to a different position angle.</li>
+    <li><strong>High RA error but low Dec error:</strong> Periodic error from the RA motor gear. Enable Predictive Periodic Error Correction (PPEC) in your mount's hand controller, or use PHD2's PEC training.</li>
+    <li><strong>Round stars sometimes, elongated other times:</strong> Classic differential flexure from a guide scope. Tighten all mounting screws and guide scope rings. If it persists, consider an OAG.</li>
+  </ul>
+
+  <div class="callout green">
+    <p><strong>One game-changer tip:</strong> Before worrying about autoguiding hardware, do a proper 3-point polar alignment and balance your mount carefully. 80% of autoguiding problems come from one of those two things. Great polar alignment alone can get you to 2-minute unguided exposures on a quality mount.</p>
+  </div>
+
+  <h2>Do You Actually Need to Guide?</h2>
+
+  <p>Not always. Modern harmonic-drive mounts like the <strong>ZWO AM5 and AM5N</strong> have such low periodic error that many users image at 3–5 minutes unguided and get round stars. The Star Adventurer GTi can do 60–90 seconds unguided at 300mm focal length. For short focal lengths (under 400mm) with a star tracker, guiding may be overkill.</p>
+
+  <p>The rule of thumb: if your unguided images show round stars, don't add complexity by guiding. If they're trailed, try better polar alignment before buying guiding gear. If they're still trailed after good polar alignment, then add guiding.</p>
+
+  <div class="verdict-box">
+    <h3>The Budget Beginner Autoguiding Kit</h3>
+    <p><strong>Guide camera:</strong> ZWO ASI290MM Mini (~$169)</p>
+    <p><strong>Guide scope:</strong> SVBONY SV106 60mm guidescope or similar (~$69)</p>
+    <p><strong>Software:</strong> PHD2 — free, open source</p>
+    <p><strong>Total extra cost: ~$240</strong> — and it will transform your imaging. The difference between unguided and guided images at 3-minute exposures is dramatic. Almost every serious deep-sky imager eventually guides.</p>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <p>© 2026 <a href="/">AstroCompare</a> · <a href="/blog.html">All Guides</a> · <a href="mailto:zhdr.rz@gmail.com">Contact</a> · Affiliate links earn us a small commission at no cost to you.</p>
+</footer>
+
+</div>
+</body>
+</html>
