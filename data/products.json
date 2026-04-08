@@ -2119,5 +2119,161 @@
     ],
     "affiliateUrl": "https://www.amazon.com/s?k=William+Optics+ZenithStar+61+APO&tag=astrocompare-20",
     "msrp": 479
+  },
+  {
+    "id": 119,
+    "name": "Askar SQA55 Quintuplet Petzval",
+    "category": "telescope",
+    "brand": "Askar",
+    "price": 795,
+    "msrp": 795,
+    "aperture": "55mm",
+    "focalLength": "264mm",
+    "focalRatio": "f/4.8",
+    "weight": "2.0kg",
+    "highlight": "One of the hottest scopes of 2026. A 5-element quintuplet Petzval that needs no flattener, adjustable aperture from f/4.8 to f/22, and pinpoint stars to the corner. Being compared constantly against the RedCat 51 in community forums \u2014 and winning on value.",
+    "bestFor": [
+      "wide-field deep sky",
+      "travel",
+      "full-frame sensors"
+    ],
+    "affiliateUrl": "https://www.amazon.com/dp/B0DCJ3Y2ZL?tag=astrocompare-20"
+  },
+  {
+    "id": 120,
+    "name": "William Optics RedCat 91 WIFD",
+    "category": "telescope",
+    "brand": "William Optics",
+    "price": 2598,
+    "msrp": 2598,
+    "aperture": "91mm",
+    "focalLength": "448mm",
+    "focalRatio": "f/4.9",
+    "weight": "4.7kg",
+    "highlight": "The premium RedCat. Five-element Petzval with 2 SD + 1 ED elements, 55mm image circle for full-frame and medium-format, built-in tilter, and WIFD focuser. The scope serious imagers save up for. Delivers edge-to-edge perfection with zero flattener needed.",
+    "bestFor": [
+      "full-frame imaging",
+      "premium wide-field",
+      "advanced imagers"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=William+Optics+RedCat+91+WIFD&tag=astrocompare-20"
+  },
+  {
+    "id": 121,
+    "name": "William Optics RedCat 71 WIFD",
+    "category": "telescope",
+    "brand": "William Optics",
+    "price": 1299,
+    "msrp": 1299,
+    "aperture": "71mm",
+    "focalLength": "348mm",
+    "focalRatio": "f/4.9",
+    "weight": "3.0kg",
+    "highlight": "The sweet spot in the RedCat lineup. Larger than the RC51 for more light-gathering, lighter and cheaper than the RC91. 5-element Petzval with WIFD focuser. A consistent top recommendation for APS-C and cropped full-frame imaging.",
+    "bestFor": [
+      "APS-C cameras",
+      "mid-range wide-field",
+      "upgrade from RC51"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=William+Optics+RedCat+71&tag=astrocompare-20"
+  },
+  {
+    "id": 122,
+    "name": "iOptron CEM40 EQ Mount",
+    "category": "mount",
+    "brand": "iOptron",
+    "price": 1099,
+    "msrp": 1099,
+    "payload": "40lbs (18kg)",
+    "highlight": "Centre-balanced equatorial mount with 40lb payload in a package weighing just 13.2lbs. The CEM design puts the OTA weight over the pier for better balance and portability. Consistently praised for its accuracy and quiet belt drive. Popular travel mount for serious imagers.",
+    "bestFor": [
+      "travel",
+      "heavy payloads",
+      "dark-site imaging"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=iOptron+CEM40+mount&tag=astrocompare-20"
+  },
+  {
+    "id": 123,
+    "name": "Sony A7 IV (Mirrorless)",
+    "category": "camera",
+    "brand": "Sony",
+    "price": 2498,
+    "msrp": 2498,
+    "sensor": "Full-Frame BSI CMOS",
+    "resolution": "33MP",
+    "pixelSize": "5.9um",
+    "cooling": false,
+    "highlight": "Sony's best general-purpose full-frame for astrophotography. BSI sensor with excellent low-light performance, 15+ stops dynamic range, and clean ISO 6400 files. Frequently recommended in Reddit threads for dual-use photographers who want one camera for everything.",
+    "bestFor": [
+      "dual-use photo",
+      "wide-field Milky Way",
+      "untracked landscape astro"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=Sony+A7+IV+mirrorless&tag=astrocompare-20"
+  },
+  {
+    "id": 124,
+    "name": "Nikon Z8 (Mirrorless)",
+    "category": "camera",
+    "brand": "Nikon",
+    "price": 3999,
+    "msrp": 3999,
+    "sensor": "Full-Frame BSI CMOS",
+    "resolution": "45.7MP",
+    "pixelSize": "4.34um",
+    "cooling": false,
+    "highlight": "Nikon's pro mirrorless now has a dedicated Starlight View mode that boosts live-view sensitivity for focusing and framing in near darkness. The Night Vision mode adds red-light display. 45.7MP full-frame BSI sensor with exceptional ISO performance makes this a standout for astrophotography.",
+    "bestFor": [
+      "Milky Way",
+      "wide-field",
+      "dual-use pro photography"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=Nikon+Z8+mirrorless&tag=astrocompare-20"
+  },
+  {
+    "id": 125,
+    "name": "ZWO ASIAIR Pro (Latest)",
+    "category": "accessory",
+    "brand": "ZWO",
+    "price": 299,
+    "msrp": 299,
+    "highlight": "The upgraded ASIAIR Pro adds faster WiFi range, an improved processor, and deeper integration with ZWO cameras and mounts. Control your entire imaging session from a phone \u2014 guiding, plate solving, focusing, sequencing. The hub of most ZWO ecosystem setups in 2026.",
+    "bestFor": [
+      "ZWO ecosystem",
+      "wireless control",
+      "automated imaging"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=ZWO+ASIAIR+Pro&tag=astrocompare-20"
+  },
+  {
+    "id": 126,
+    "name": "Pegasus Powerbox Advance",
+    "category": "accessory",
+    "brand": "Pegasus Astro",
+    "price": 349,
+    "msrp": 349,
+    "highlight": "The most popular power and dew management hub in astrophotography. Controls dew heaters, USB hubs, 12V outputs, and monitors power draw \u2014 all from one device. Eliminates the cable-nest problem and integrates with NINA and ASIAIR. A near-mandatory upgrade for serious traditional setups.",
+    "bestFor": [
+      "dew management",
+      "cable management",
+      "traditional setups"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=Pegasus+Powerbox+Advance&tag=astrocompare-20"
+  },
+  {
+    "id": 127,
+    "name": "ZWO Electronic Auto Focuser Pro 2",
+    "category": "accessory",
+    "brand": "ZWO",
+    "price": 189,
+    "msrp": 189,
+    "highlight": "The upgraded EAF with improved torque, quieter motor, and better temperature compensation. Works with NINA and ASIAIR to maintain perfect focus automatically as temperatures drop during the night. One of the most-recommended upgrades once you have a solid imaging setup.",
+    "bestFor": [
+      "autofocus",
+      "NINA workflow",
+      "temperature compensation"
+    ],
+    "affiliateUrl": "https://www.amazon.com/s?k=ZWO+EAF+Pro+electronic+auto+focuser&tag=astrocompare-20"
   }
 ]

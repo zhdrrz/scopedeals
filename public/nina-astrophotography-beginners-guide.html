@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N.I.N.A. Astrophotography Software: The Complete Beginner's Guide (2026) | AstroCompare</title>
+<meta name="description" content="N.I.N.A. is the free software that automates your entire astrophotography imaging session. This complete beginner's guide covers setup, plate solving, sequencing, and autofocus from scratch.">
+<meta name="keywords" content="NINA astrophotography software, NINA tutorial beginners, nighttime imaging N astronomy, NINA plate solving setup, NINA sequencer guide, free astrophotography software 2026">
+<link rel="canonical" href="https://astrocompare.netlify.app/nina-astrophotography-beginners-guide.html">
+<meta property="og:title" content="N.I.N.A. for Beginners: The Complete 2026 Guide to Automating Your Imaging Session">
+<meta property="og:description" content="The free software that serious astrophotographers use to automate everything. Setup, plate solving, sequencing, autofocus — explained simply.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06070d;--bg2:#0c0e18;--bg3:#141726;--bg4:#1c2035;
+  --text:#dfe1ed;--text2:#8e91ab;--text3:#5d6080;
+  --accent:#2d7ff9;--accent2:#74b3ff;
+  --cyan:#00cec9;--orange:#fdcb6e;--green:#55efc4;--red:#fd7979;
+  --border:#1e2140;--border2:#2d3160;
+  --radius:10px;
+  --mono:'IBM Plex Mono',monospace;--sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;min-height:100vh}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1.5px 1.5px at 35% 20%,rgba(255,255,255,.8),transparent),
+    radial-gradient(1px 1px at 65% 38%,rgba(200,220,255,.7),transparent),
+    radial-gradient(2px 2px at 78% 10%,rgba(255,255,255,.9),transparent),
+    radial-gradient(1px 1px at 88% 60%,rgba(255,255,255,.6),transparent),
+    radial-gradient(ellipse 80% 40% at 50% 0%,rgba(45,127,249,.07),transparent 70%);
+}
+.page{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 1.5rem}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-text{font-family:var(--mono);font-weight:700;font-size:2.2rem;color:var(--text)}
+.nav-logo-text span{color:var(--accent2)}
+.nav-links{display:flex;gap:.5rem}
+.nav-link{padding:.4rem .9rem;border-radius:8px;font-size:.82rem;font-weight:500;text-decoration:none;color:var(--text2);border:1px solid transparent;transition:all .15s}
+.nav-link:hover{color:var(--text);background:var(--bg3);border-color:var(--border)}
+.nav-link.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-link.primary:hover{background:#1a6fe0}
+.article-header{padding:3rem 0 2rem}
+.article-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;font-weight:600;padding:.2rem .6rem;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:1rem;background:rgba(85,239,196,.15);color:var(--green)}
+.article-header h1{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:1rem}
+.article-header h1 span{color:var(--accent2)}
+.article-meta{font-family:var(--mono);font-size:.75rem;color:var(--text3);display:flex;gap:1.5rem;flex-wrap:wrap}
+.article-body{padding-bottom:4rem}
+.article-body h2{font-size:1.35rem;font-weight:700;margin:2.5rem 0 .75rem}
+.article-body h3{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .5rem;color:var(--accent2)}
+.article-body p{color:var(--text2);margin-bottom:1.1rem;font-size:.97rem}
+.article-body p strong{color:var(--text);font-weight:600}
+.article-body ul,.article-body ol{color:var(--text2);margin:0 0 1.1rem 1.5rem;font-size:.97rem}
+.article-body li{margin-bottom:.45rem}
+.callout{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.25rem;margin:1.5rem 0}
+.callout.green{border-left-color:var(--green)}
+.callout.orange{border-left-color:var(--orange)}
+.callout p{margin:0;font-size:.92rem}
+.callout strong{color:var(--text)}
+.flow-steps{display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0}
+.flow-step{display:flex;gap:1rem;align-items:flex-start;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
+.step-num{background:var(--accent);color:#fff;font-family:var(--mono);font-size:.75rem;font-weight:700;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-content h4{font-size:.92rem;font-weight:600;margin-bottom:.25rem}
+.step-content p{color:var(--text2);font-size:.86rem;margin:0}
+.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem;margin:1.5rem 0}
+.module-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem}
+.module-card h4{font-size:.88rem;font-weight:600;margin-bottom:.35rem;color:var(--accent2)}
+.module-card p{font-size:.82rem;color:var(--text2);margin:0;line-height:1.5}
+.buy-box{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:1.25rem 1.5rem;margin:1.25rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.buy-box-info h4{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.buy-box-info p{font-size:.82rem;color:var(--text2);margin:0}
+.buy-box-price{font-family:var(--mono);font-size:1.2rem;font-weight:700;color:var(--cyan)}
+.buy-btn{background:var(--accent);color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .15s}
+.buy-btn:hover{background:#1a6fe0}
+.verdict-box{background:linear-gradient(135deg,rgba(45,127,249,.08),rgba(0,206,201,.05));border:1px solid rgba(45,127,249,.25);border-radius:14px;padding:1.5rem;margin:2rem 0}
+.verdict-box h3{color:var(--accent2);font-size:1.05rem;margin-bottom:.75rem}
+.verdict-box p{color:var(--text2);font-size:.93rem;margin:0 0 .6rem}
+.verdict-box p:last-child{margin:0}
+.site-footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;font-size:.8rem;color:var(--text3);font-family:var(--mono)}
+.site-footer a{color:var(--text2);text-decoration:none}
+.site-footer a:hover{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="site-nav">
+  <a href="/" class="nav-logo">
+    <svg width="56" height="56" viewBox="0 0 42 42" fill="none">
+      <circle cx="7" cy="7" r="2.5" fill="#74b3ff" opacity="0.9"/>
+      <line x1="10" y1="10" x2="20" y2="18" stroke="#2d7ff9" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6"/>
+      <rect x="17" y="20" width="18" height="8" rx="3" fill="#1c2035" stroke="#2d7ff9" stroke-width="1.5"/>
+      <rect x="33" y="22" width="6" height="4" rx="1.5" fill="#2d7ff9" opacity="0.85"/>
+      <rect x="14" y="21" width="4" height="6" rx="1" fill="#0c0e18" stroke="#74b3ff" stroke-width="1.2"/>
+      <circle cx="16" cy="24" r="1.5" fill="#00cec9" opacity="0.7"/>
+    </svg>
+    <span class="nav-logo-text">Astro<span>Compare</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="/blog.html" class="nav-link">← Guides</a>
+    <a href="/" class="nav-link primary">↗ Compare Prices</a>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="article-tag">Software Guide</div>
+  <h1>N.I.N.A. for Beginners: <span>Automate Your Entire Imaging Session for Free</span></h1>
+  <div class="article-meta">
+    <span>April 2026</span><span>12 min read</span><span>Most recommended free astro software</span>
+  </div>
+</header>
+
+<article class="article-body">
+
+  <p>If you've spent any time in r/astrophotography you've seen it mentioned constantly: <strong>N.I.N.A.</strong> — Nighttime Imaging 'N' Astronomy. It's free, open-source, and it automates your entire imaging session from polar alignment to the last calibration frame. The learning curve puts a lot of beginners off, but once it clicks, most imagers never go back. This guide gets you there without the frustration.</p>
+
+  <h2>What N.I.N.A. Actually Does</h2>
+  <p>At its core, N.I.N.A. is a sequencer — you tell it what to capture, and it handles everything automatically. But it goes far beyond simple capture control. It plate-solves your target (identifies exactly where you're pointing from the stars it sees), autoguides, autofocuses as temperature changes, manages your filter wheel, and runs an entire imaging plan unattended while you sleep.</p>
+
+  <div class="module-grid">
+    <div class="module-card"><h4>📡 Equipment Control</h4><p>Connects your camera, mount, focuser, filter wheel, rotator, and guide camera through ASCOM or native drivers.</p></div>
+    <div class="module-card"><h4>🎯 Plate Solving</h4><p>Uses ASTAP or Astrometry.net to identify exactly where your scope is pointing and slew precisely to your target.</p></div>
+    <div class="module-card"><h4>🔍 Autofocus</h4><p>Drives your EAF to find perfect focus automatically using star HFR curves, and re-focuses when temperature drops.</p></div>
+    <div class="module-card"><h4>🌙 Sequencer</h4><p>Build a queue of targets and capture plans. NINA works through them automatically, slewing and re-focusing between targets.</p></div>
+    <div class="module-card"><h4>📊 Guiding Integration</h4><p>Talks to PHD2 in real time — pauses sequences when guiding is lost, resumes when stable.</p></div>
+    <div class="module-card"><h4>🌅 Sky Conditions</h4><p>Monitors weather, humidity, and sky quality via plugins. Can park the mount and close a roof if conditions deteriorate.</p></div>
+  </div>
+
+  <h2>Getting N.I.N.A. Set Up: Step by Step</h2>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Download and install</h4>
+        <p>Download from nighttime-imaging.eu — it's free and runs on Windows. Install ASCOM Platform first (also free) if you haven't already. This is the universal driver layer N.I.N.A. uses to talk to most equipment.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Install ASTAP for plate solving</h4>
+        <p>Download ASTAP (free) and a star catalogue — the D05 catalogue covers most imaging fields. Set ASTAP as your primary plate solver in N.I.N.A.'s Options → Plate Solving. This is what lets NINA know exactly where you're pointing.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Connect your equipment</h4>
+        <p>Go to the Equipment tab and connect your camera, mount, focuser, and guide camera one by one. Each device needs its ASCOM driver installed. ZWO cameras use the ZWO ASCOM driver. Most popular mounts have ASCOM drivers available from the manufacturer.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Run the Three-Point Polar Alignment (TPPA)</h4>
+        <p>Under Polar Alignment in the menu — NINA slews to three positions and uses plate solving to measure your polar alignment error, then tells you exactly how much to adjust your mount's altitude and azimuth knobs. Far more accurate than a polar scope.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Run an Autofocus routine</h4>
+        <p>In the Imaging tab, click Autofocus. NINA moves your focuser through a range of positions, measures star HFR (Half-Flux Radius) at each point, and finds the minimum — perfect focus. Set it to re-run automatically every 30 minutes or when temperature drops 2°C.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h4>Build your sequence and start imaging</h4>
+        <p>In the Sequencer, add your target, set how many frames to capture at what exposure length and ISO/gain, add dither instructions between frames, and press Start. NINA handles the rest — slewing, plate solving, guiding, focusing, and saving your files.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>The Most Common N.I.N.A. Beginner Problems</h2>
+
+  <h3>Plate solving keeps failing</h3>
+  <p>This is the #1 complaint. Most failures are caused by: (1) no star catalogue downloaded for ASTAP — make sure you've downloaded the D05 or H17 catalogue to the right folder, (2) blind solving taking too long — input your rough RA/Dec coordinates as hints, (3) focal length set incorrectly in Options — this must match your actual setup exactly.</p>
+
+  <h3>"NINA won't connect to my mount"</h3>
+  <p>Install the manufacturer's ASCOM driver for your specific mount, not a generic one. Sky-Watcher mounts use the SynScan ASCOM driver. iOptron mounts use the iOptron ASCOM driver. ZWO mounts have their own. Restart N.I.N.A. after installing any new driver.</p>
+
+  <h3>Autofocus gives a flat curve, can't find minimum</h3>
+  <p>Usually means your focuser step size is too large or too small, or you're not near focus to begin with. Start with a rough manual focus first. In Autofocus settings, set your step size to something that moves the stars visibly but not dramatically — about 50–100 steps for most EAFs.</p>
+
+  <div class="callout green">
+    <p><strong>Pro tip:</strong> Install the Hocus Focus plugin (free) from the N.I.N.A. plugin manager. It adds Gaussian and Hyperbolic fitting curves to the autofocus routine which are more accurate and reliable than the default parabolic fitting, especially on fast telescopes.</p>
+  </div>
+
+  <h2>N.I.N.A. vs ASIAIR: Which Should You Use?</h2>
+  <p>This question comes up constantly. The honest answer: they serve different users.</p>
+  <ul>
+    <li><strong>N.I.N.A.:</strong> Windows PC required. More powerful, more customisable, supports almost any equipment brand via ASCOM. Better for permanent or semi-permanent setups with a laptop or mini-PC at the mount. Free forever.</li>
+    <li><strong>ASIAIR:</strong> Dedicated hardware (ZWO's own mini-computer). Works via smartphone app, no laptop needed. Much simpler to set up. Works best with ZWO cameras and mounts. Less flexible for non-ZWO gear. Great for travel and grab-and-go setups.</li>
+  </ul>
+  <p>If you're in the ZWO ecosystem and value simplicity, ASIAIR is excellent. If you have a mixed set of gear or want maximum control and automation, N.I.N.A. is the more powerful choice — and it's free.</p>
+
+  <div class="buy-box">
+    <div class="buy-box-info">
+      <h4>ZWO EAF Pro — Electronic Auto Focuser</h4>
+      <p>Works natively with N.I.N.A. autofocus routines</p>
+    </div>
+    <div class="buy-box-price">~$189</div>
+    <a href="https://www.amazon.com/s?k=ZWO+EAF+Pro+electronic+focuser&tag=astrocompare-20" class="buy-btn" target="_blank" rel="noopener">View on Amazon ↗</a>
+  </div>
+  <div class="buy-box">
+    <div class="buy-box-info">
+      <h4>ZWO ASIAIR Pro — For App-Based Imaging</h4>
+      <p>Wireless control hub, no laptop needed · ZWO ecosystem</p>
+    </div>
+    <div class="buy-box-price">~$299</div>
+    <a href="https://www.amazon.com/s?k=ZWO+ASIAIR+Pro&tag=astrocompare-20" class="buy-btn" target="_blank" rel="noopener">View on Amazon ↗</a>
+  </div>
+
+  <div class="verdict-box">
+    <h3>Bottom Line</h3>
+    <p>N.I.N.A. has a steeper setup curve than any other astrophotography tool — but the payoff is an automated rig that runs all night without you touching it. The time investment to learn it properly is 2–4 weeks of regular use. After that, most imagers say it transformed their productivity. Start with the basics: connect your equipment, plate solve one target, run autofocus. Add complexity one piece at a time.</p>
+    <p>Download free at <strong>nighttime-imaging.eu</strong></p>
+  </div>
+
+</article>
+<footer class="site-footer">
+  <p>© 2026 <a href="/">AstroCompare</a> · <a href="/blog.html">All Guides</a> · <a href="mailto:zhdr.rz@gmail.com">Contact</a> · Affiliate links earn us a small commission at no cost to you.</p>
+</footer>
+</div>
+</body>
+</html>
