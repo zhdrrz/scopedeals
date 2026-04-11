@@ -142,6 +142,54 @@ body::after{
 }
 .tagline strong{color:var(--cyan);font-weight:500}
 
+/* ── GUIDES STRIP ── */
+.guides-strip{
+  max-width:1280px;margin:0 auto;
+  padding:.85rem 2rem;border-bottom:1px solid var(--border);
+}
+.gs-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:.75rem;
+}
+.gs-label{
+  font-family:var(--mono);font-size:.72rem;font-weight:700;
+  color:var(--accent2);letter-spacing:.5px;text-transform:uppercase;
+}
+.gs-toggle{
+  font-family:var(--mono);font-size:.7rem;color:var(--text3);
+  background:none;border:1px solid var(--border);border-radius:6px;
+  padding:.25rem .65rem;cursor:pointer;transition:all .15s;
+}
+.gs-toggle:hover{color:var(--accent2);border-color:var(--accent)}
+.gs-cards{
+  display:flex;gap:.65rem;flex-wrap:nowrap;overflow-x:auto;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.gs-cards::-webkit-scrollbar{display:none}
+.gs-cards.expanded{flex-wrap:wrap}
+.gs-card{
+  flex:0 0 auto;width:185px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  padding:.75rem .9rem;text-decoration:none;color:inherit;
+  transition:border-color .15s,transform .15s;
+}
+.gs-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.gs-card.gs-hidden{display:none}
+.gs-cards.expanded .gs-card.gs-hidden{display:block}
+.gs-tag{
+  font-family:var(--mono);font-size:.6rem;font-weight:700;
+  padding:.15rem .45rem;border-radius:3px;
+  text-transform:uppercase;letter-spacing:.4px;
+  display:inline-block;margin-bottom:.45rem;
+}
+.gs-comparison{background:rgba(45,127,249,.15);color:var(--accent2)}
+.gs-guide{background:rgba(85,239,196,.15);color:var(--green)}
+.gs-budget{background:rgba(253,203,110,.15);color:var(--orange)}
+.gs-events{background:rgba(0,206,201,.15);color:var(--cyan)}
+.gs-filter{background:rgba(162,155,254,.15);color:#a29bfe}
+.gs-title{font-size:.82rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:.2rem}
+.gs-sub{font-size:.74rem;color:var(--text3);line-height:1.4}
+
 /* ── NAV TABS ── */
 .nav-tabs{
   max-width:1280px;margin:0 auto;padding:.75rem 2rem;
@@ -401,6 +449,97 @@ tbody tr:hover td{background:var(--accent-glow)}
   </div>
   <p class="tagline">The simplest way to compare <strong>smart telescopes</strong> and <strong>astrophotography gear</strong>. Every model, side by side — sorted by value so you always get the best deal for your stargazing setup.</p>
 </header>
+
+<!-- GUIDES STRIP -->
+<div class="guides-strip" id="guidesStrip">
+  <div class="guides-strip-inner">
+    <div class="gs-header">
+      <span class="gs-label">✦ Buying Guides</span>
+      <button class="gs-toggle" id="gsToggle" onclick="toggleGuides()">Show all 13 guides ▾</button>
+    </div>
+    <div class="gs-cards" id="gsCards">
+
+      <a href="/seestar-s30-vs-dwarf-3.html" class="gs-card">
+        <div class="gs-tag gs-comparison">Comparison</div>
+        <div class="gs-title">Seestar S30 vs DWARF 3</div>
+        <div class="gs-sub">Which smart scope wins under $500?</div>
+      </a>
+
+      <a href="/best-telescopes-2026.html" class="gs-card">
+        <div class="gs-tag gs-guide">2026 Guide</div>
+        <div class="gs-title">Best Smart Telescopes 2026</div>
+        <div class="gs-sub">Top picks across every budget</div>
+      </a>
+
+      <a href="/astrophotography-under-1000.html" class="gs-card">
+        <div class="gs-tag gs-budget">Budget</div>
+        <div class="gs-title">Best Setup Under $1,000</div>
+        <div class="gs-sub">Exactly what to buy and skip</div>
+      </a>
+
+      <a href="/seestar-s50-vs-s30-pro.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-comparison">Comparison</div>
+        <div class="gs-title">Seestar S50 vs S30 Pro</div>
+        <div class="gs-sub">Deep-sky vs wide-field — which ZWO?</div>
+      </a>
+
+      <a href="/sky-events-april-may-2026.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-events">Sky Events</div>
+        <div class="gs-title">April &amp; May 2026 Sky Events</div>
+        <div class="gs-sub">Worldwide astronomy calendar</div>
+      </a>
+
+      <a href="/mount-vs-telescope-whats-more-important.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-budget">Beginner</div>
+        <div class="gs-title">Mount vs Telescope Priority</div>
+        <div class="gs-sub">The most common beginner mistake</div>
+      </a>
+
+      <a href="/smart-telescope-vs-traditional-setup.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-comparison">Comparison</div>
+        <div class="gs-title">Smart Scope vs Traditional Rig</div>
+        <div class="gs-sub">Honest 2026 head-to-head</div>
+      </a>
+
+      <a href="/autoguiding-beginners-guide.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-guide">Technical</div>
+        <div class="gs-title">Autoguiding for Beginners</div>
+        <div class="gs-sub">Round stars every time with PHD2</div>
+      </a>
+
+      <a href="/narrowband-filters-light-pollution-guide.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-filter">Filters</div>
+        <div class="gs-title">Narrowband from Light-Polluted Skies</div>
+        <div class="gs-sub">Ha, OIII, dual-band — which to buy</div>
+      </a>
+
+      <a href="/nina-astrophotography-beginners-guide.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-guide">Software</div>
+        <div class="gs-title">N.I.N.A. Beginners Guide</div>
+        <div class="gs-sub">Free software to automate everything</div>
+      </a>
+
+      <a href="/how-to-focus-telescope-astrophotography.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-budget">Technique</div>
+        <div class="gs-title">How to Focus Your Telescope</div>
+        <div class="gs-sub">Bahtinov masks, EAF, HFR curves</div>
+      </a>
+
+      <a href="/best-travel-astrophotography-setup-2026.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-events">Travel</div>
+        <div class="gs-title">Best Travel Setup 2026</div>
+        <div class="gs-sub">Portable rigs that actually deliver</div>
+      </a>
+
+      <a href="/dslr-mirrorless-vs-dedicated-astro-camera-2026.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-comparison">Camera Guide</div>
+        <div class="gs-title">DSLR vs Mirrorless vs Astro Cam</div>
+        <div class="gs-sub">Which camera type should you buy?</div>
+      </a>
+
+    </div>
+  </div>
+</div>
 
 <!-- NAV TABS -->
 <nav class="nav-tabs" id="navTabs">
@@ -1281,6 +1420,14 @@ document.querySelectorAll('.f-select, .f-input').forEach(el => {
   el.addEventListener('change', render);
   el.addEventListener('input', render);
 });
+
+// ── Guides strip toggle
+function toggleGuides() {
+  const cards = document.getElementById('gsCards');
+  const btn = document.getElementById('gsToggle');
+  const expanded = cards.classList.toggle('expanded');
+  btn.textContent = expanded ? 'Show less ▴' : 'Show all 13 guides ▾';
+}
 
 // ── Deals toggle
 function toggleDeals() {
