@@ -291,6 +291,8 @@ body::after{
 .spec-label{font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.8px}
 .spec-value{font-family:var(--mono);font-size:.8rem;color:var(--text);font-weight:500}
 
+.card-guide-link{display:inline-block;font-size:.72rem;color:var(--accent);text-decoration:none;margin-bottom:.6rem;padding:.2rem .5rem;border-radius:4px;background:rgba(45,127,249,.1);border:1px solid rgba(45,127,249,.2);transition:background .2s}
+.card-guide-link:hover{background:rgba(45,127,249,.2)}
 .card-footer{display:flex;align-items:flex-end;justify-content:space-between;margin-top:.75rem}
 .price-block{}
 .price-now{font-family:var(--mono);font-weight:700;font-size:1.35rem;color:var(--cyan)}
@@ -1325,6 +1327,31 @@ function render() {
       const typeClass = p.category === 'smart-telescope' ? 'type-smart' : p.category === 'camera' ? 'type-camera' : p.category === 'mount' ? 'type-mount' : p.category === 'telescope' ? 'type-telescope' : 'type-accessory';
       const typeLabel = p.category === 'smart-telescope' ? 'Smart Scope' : p.category === 'camera' ? 'Camera' : p.category === 'mount' ? 'Mount' : p.category === 'telescope' ? 'Telescope' : 'Accessory';
       const cardClass = p.bestValue ? 'best-value' : p.editorsPick ? 'editors-pick' : '';
+      // Internal guide links — product-specific overrides first, then category fallbacks
+      const guideMap = {
+        'Seestar S50': {url:'/seestar-s50-vs-s30-pro.html', label:'S50 vs S30 Pro'},
+        'Seestar S30 Pro': {url:'/seestar-s50-vs-s30-pro.html', label:'S50 vs S30 Pro'},
+        'Seestar S30': {url:'/seestar-s30-vs-dwarf-3.html', label:'S30 vs Dwarf 3'},
+        'Dwarf III': {url:'/seestar-s30-vs-dwarf-3.html', label:'S30 vs Dwarf 3'},
+        'Optolong L-Ultimate': {url:'/narrowband-filters-light-pollution-guide.html', label:'Narrowband Guide'},
+        'Optolong L-eXtreme': {url:'/narrowband-filters-light-pollution-guide.html', label:'Narrowband Guide'},
+        'Astronomik UHC': {url:'/narrowband-filters-light-pollution-guide.html', label:'Narrowband Guide'},
+        'ZWO OAG-L': {url:'/autoguiding-beginners-guide.html', label:'Autoguiding Guide'},
+        'ZWO OAG': {url:'/autoguiding-beginners-guide.html', label:'Autoguiding Guide'},
+        'ZWO EAF': {url:'/how-to-focus-telescope-astrophotography.html', label:'Focusing Guide'},
+        'ZWO EAF Pro 2': {url:'/how-to-focus-telescope-astrophotography.html', label:'Focusing Guide'},
+        'Baader MPCC': {url:'/how-to-focus-telescope-astrophotography.html', label:'Focusing Guide'},
+        'Canon EOS Ra': {url:'/dslr-mirrorless-vs-dedicated-astro-camera-2026.html', label:'Camera Comparison'},
+        'Sony A7 IV': {url:'/dslr-mirrorless-vs-dedicated-astro-camera-2026.html', label:'Camera Comparison'},
+        'Nikon Z8': {url:'/dslr-mirrorless-vs-dedicated-astro-camera-2026.html', label:'Camera Comparison'},
+      };
+      const catGuideMap = {
+        'smart-telescope': {url:'/smart-telescope-vs-traditional-setup.html', label:'Smart vs Traditional'},
+        'mount': {url:'/mount-vs-telescope-whats-more-important.html', label:'Mount vs Telescope'},
+        'camera': {url:'/dslr-mirrorless-vs-dedicated-astro-camera-2026.html', label:'Camera Guide'},
+      };
+      const guide = guideMap[p.name] || catGuideMap[p.category] || null;
+      const guideLink = guide ? `<a href="${guide.url}" class="card-guide-link">✦ ${guide.label} →</a>` : '';
       return `<div class="card ${cardClass}" style="animation-delay:${i * 0.05}s">
         <div class="card-header">
           <div>
@@ -1344,6 +1371,7 @@ function render() {
           ${p.fRatio !== '—' ? `<div class="spec-item"><span class="spec-label">F-Ratio</span><span class="spec-value">${p.fRatio}</span></div>` : ''}
         </div>
         <div style="font-size:.78rem;color:var(--text2);margin-bottom:.75rem;min-height:2.4em">✦ ${p.highlight}</div>
+        ${guideLink}
         <div class="card-footer">
           <div class="price-block">
             <span class="price-now">$${p.price.toLocaleString()}</span>
