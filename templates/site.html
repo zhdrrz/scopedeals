@@ -457,7 +457,7 @@ tbody tr:hover td{background:var(--accent-glow)}
   <div class="guides-strip-inner">
     <div class="gs-header">
       <span class="gs-label">✦ Buying Guides</span>
-      <button class="gs-toggle" id="gsToggle" onclick="toggleGuides()">Show all 13 guides ▾</button>
+      <button class="gs-toggle" id="gsToggle" onclick="toggleGuides()">Show all 17 guides ▾</button>
     </div>
     <div class="gs-cards" id="gsCards">
 
@@ -537,6 +537,30 @@ tbody tr:hover td{background:var(--accent-glow)}
         <div class="gs-tag gs-comparison">Camera Guide</div>
         <div class="gs-title">DSLR vs Mirrorless vs Astro Cam</div>
         <div class="gs-sub">Which camera type should you buy?</div>
+      </a>
+
+      <a href="/polar-alignment-guide-astrophotography.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-guide">Technical</div>
+        <div class="gs-title">Polar Alignment: Step-by-Step Guide</div>
+        <div class="gs-sub">SharpCap, drift align & iPolar methods</div>
+      </a>
+
+      <a href="/pixinsight-vs-siril-vs-app-astrophotography-software.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-comparison">Software</div>
+        <div class="gs-title">PixInsight vs Siril vs APP</div>
+        <div class="gs-sub">Best processing software compared</div>
+      </a>
+
+      <a href="/planetary-astrophotography-beginners-guide.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-guide">Beginner</div>
+        <div class="gs-title">Planetary Astrophotography Guide</div>
+        <div class="gs-sub">Lucky imaging, seeing & cameras</div>
+      </a>
+
+      <a href="/best-deep-sky-objects-beginners.html" class="gs-card gs-hidden">
+        <div class="gs-tag gs-guide">Target List</div>
+        <div class="gs-title">12 Best Targets for Beginners</div>
+        <div class="gs-sub">M42, Andromeda, Orion & more</div>
       </a>
 
     </div>
@@ -824,7 +848,7 @@ function toggleGuides() {
   const cards = document.getElementById('gsCards');
   const btn = document.getElementById('gsToggle');
   const expanded = cards.classList.toggle('expanded');
-  btn.textContent = expanded ? 'Show less ▴' : 'Show all 13 guides ▾';
+  btn.textContent = expanded ? 'Show less ▴' : 'Show all 17 guides ▾';
 }
 
 // ── Deals toggle
